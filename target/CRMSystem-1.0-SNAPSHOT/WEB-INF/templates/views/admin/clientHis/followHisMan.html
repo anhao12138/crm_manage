@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>跟进历史管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="static/lay-uis/css/layui.css" media="all">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+<table class="layui-hide" id="department" lay-filter="department"></table>
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-form-item">
+
+        <div class="layui-inline">
+            <input type="text" class="layui-input" id="test1" value="" placeholder="输入客户姓名或者操作人">
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label layui-form-label2"></label>
+            <div class="layui-inline">
+                <div class="layui-inline">
+                    <label class="layui-form-label layui-form-label2">跟进时间范围 </label>
+                    <div class="layui-input-inline">
+                        <input type="text" class="layui-input" id="test10" placeholder=" - ">
+                    </div>
+
+                    <div class="layui-input-inline">
+                        <select name="departId" lay-filter="aihao">
+                            <option value="">全部（以跟进类型）</option>
+                            <option value="0">潜在开发计划</option>
+                            <option value="1">客户跟进历史</option>
+                        </select>
+                    </div>
+                    <button type="button" class="layui-btn">查询</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</script>
+
+<!--头部组件-->
+<script id="headBar" type="text/html">
+
+    <div class="layui-form" >
+
+        <div class="layui-input-inline">
+            <input type="text" id="keyword" lay-verify="title" autocomplete="off" placeholder="请输入待查询客户姓名" class="layui-input">
+        </div>
+
+        <div class="layui-input-inline" style="margin-left: 30px" >
+            <div class="layui-inline">
+                <div class="layui-input-inline" style="width: 160px;float:left;">
+                    <input  autocomplete="off" type="text" class="layui-input" id="start_time"name="start_time" placeholder="开始时间">
+                </div>
+                <div class="layui-form-mid" style="margin-left: 5px"> 至</div>
+                <div class="layui-input-inline" style="width: 160px;float: right">
+                    <input  autocomplete="off" type="text" class="layui-input" id="end_time" name="end_time" placeholder="结束时间">
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-input-inline">
+            <select id="resultId" lay-verify="required" >
+                <option value="">全部（以跟进类型查询）</option>
+                <option value="0">潜在开发计划</option>
+                <option value="1">客户跟进历史</option>
+
+            </select>
+        </div>
+        <div class="layui-input-inline">
+            <button type="button" class="layui-btn" lay-event="selectInfo">查询</button>
+        </div>
+
+    </div>
+
+</script>
+<!--跟进结果组件-->
+<script id="followResult" type="text/html">
+    {{#if(d.traceResult==3){ }}
+    <button type="button" class="layui-btn layui-btn-sm layui-btn-normal" >可以</button>
+    {{#}else if(d.traceResult==2){}}
+    <button type="button" class="layui-btn layui-btn-sm layui-btn-normal" >考虑</button>
+    {{#}else{}}
+    <button type="button" class="layui-btn layui-btn-sm layui-btn-normal" >不行</button>
+    {{#}}}
+</script>
+<!--跟进类型-->
+<script id="followType" type="text/html">
+    {{#if(d.type==0){ }}
+    <button type="button" class="layui-btn layui-btn-sm layui-btn-normal" >潜在开发计划</button>
+    {{#}else{}}
+    <button type="button" class="layui-btn layui-btn-sm layui-btn-normal" >客户跟进历史</button>
+    {{#}}}
+</script>
+</body>
+<script src="/static/lay-uis/layui.js"></script>
+
+<script>
+    layui.use(['table', 'laydate','form','util'], function () {
+        var table = layui.table
+            , form = layui.form
+            , util=layui.util
+            , $=layui.jquery
+            , laydate = layui.laydate;
+
+        form.render()
+
+        var startTime=laydate.render({
+            elem: '#start_time',
+            trigger: 'click',
+            // min:'2000-1-1',
+            //max: $("#end_time").val()===''?0:$("#end_time").val(),
+            max:util.toDateString(getCurrentDate(),"yyyy-MM-dd"),
+            done:function(value,date){
+                endTime.config.min ={
+                    year:date.year,
+                    month:date.month-1,
+                    date: date.date,
+                };
+            }
+        });
+        var endTime=laydate.render({
+            elem: '#end_time',
+            trigger: 'click',
+            max:util.toDateString(getCurrentDate(),"yyyy-MM-dd"),
+            done:function(value,date){
+                startTime.config.max={
+                    year:date.year,
+                    month:date.month-1,
+                    date: date.date,
+
+                }
+            }
+        });
+
+
+        table.render({
+            elem: '#department'
+            , url:'follow/queryAllByKey.do'
+            , toolbar: '#headBar' //开启头部工具栏，并为其绑定左侧模板
+            , id: 'idTest'
+            , cellMinWidth: 80
+            , cols: [
+                [
+                    {type: 'numbers', title: "编号", width: 80,align:'center'}
+                    , {field: 'name', title: '姓名', width: 180,align:'center'}
+                    , {field: 'traceTime', title: '跟进日期', width: 230,templet : "<div>{{layui.util.toDateString(d.traceTime, 'yyyy-MM-dd')}}</div>" ,align:'center'}
+                    , {field: 'traceDetails', title: '跟进内容',align:'center'}
+                    , {field: 'traceType', title: '跟进方式', width: 155,align:'center'}
+                    , {field: 'traceResult', title: '跟进结果', width: 155,templet:"#followResult",align:'center'}
+                    , {field: 'inputUser', title: '录入人', width: 160,align:'center'}
+                    // , {field: 'type', title: '跟进类型',templet:'#followType',align:'center'}
+                ]
+            ]
+            , page: true
+        });
+
+
+        table.on("toolbar(department)",function (obj) {
+            switch (obj.event) {
+                case 'selectInfo':
+                    table.reload("idTest",{
+                        url:'follow/queryAllByKey.do',
+                        where:{
+                            startTime:$("#start_time").val(),
+                            endTime:$("#end_time").val(),
+                            keyword:$("#keyword").val(),
+                            resultId:$("#resultId").val(),
+
+                        },
+                        page:{curr:1}
+                    })
+                    var startTime=laydate.render({
+                        elem: '#start_time',
+                        trigger: 'click',
+                        // min:'2000-1-1',
+                        //max: $("#end_time").val()===''?0:$("#end_time").val(),
+                        max:util.toDateString(getCurrentDate(),"yyyy-MM-dd"),
+                        done:function(value,date){
+                            endTime.config.min ={
+                                year:date.year,
+                                month:date.month-1,
+                                date: date.date,
+                            };
+                        }
+                    });
+                    var endTime=laydate.render({
+                        elem: '#end_time',
+                        trigger: 'click',
+                        max:util.toDateString(getCurrentDate(),"yyyy-MM-dd"),
+                        done:function(value,date){
+                            startTime.config.max={
+                                year:date.year,
+                                month:date.month-1,
+                                date: date.date,
+
+                            }
+                        }
+                    });
+            }
+        })
+    });
+    function getCurrentDate() {
+        return new Date()
+    }
+    var data=[]
+</script>
+<style>
+    .layui-form-label2 {
+        width: 120px !important;
+        text-align: center !important;
+    }
+</style>
+</html>

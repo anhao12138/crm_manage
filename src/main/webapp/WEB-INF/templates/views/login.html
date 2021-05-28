@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>登录</title>
+		<!-- 样 式 文 件 -->
+		<link rel="stylesheet" href="/static/Admin-Layui/component/pear/css/pear.css" />
+		<link rel="stylesheet" href="/static/Admin-Layui/admin/css/other/login.css" />
+	</head>
+    <!-- 代 码 结 构 -->
+	<body background="/static/Admin-Layui/admin/images/background.svg" style="background-size: cover;">
+	<form class="layui-form" th:action="@{/loginInfo.do}" style="width: 304px;height: 240px; margin: 100px auto 50px auto;" method="post">
+			<div class="layui-form-item">
+				<img class="logo" src="/static/Admin-Layui/admin/images/logo.png" />
+				<div class="title">Pear Admin</div>
+				<div class="desc">
+					西城最好看的CRM
+				</div>
+			</div>
+		<div class="layui-form-item" style="width: 300px;padding: 2px;">
+			<input type="text" name="userName" lay-verify="required" autocomplete="off" value="admin"
+				   lay-reqtext="用户名是必填项？" placeholder="请输入用户名" class="layui-input" style="background: rgba(207,255,250,0.5)">
+		</div>
+
+		<div class="layui-form-item" style="margin-top: 50px">
+			<div class="layui-input-inline" style="width: 300px;padding: 5px 2px 4px;">
+				<input type="password" name="password" lay-verify="required" lay-reqtext="密码是必填项" value="123"
+					   placeholder="请输入密码" autocomplete="off" class="layui-input" style="background: rgba(207,255,250,0.5)">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-input-inline" style="width: 300px;padding: 2px;">
+
+				<button type="reset" class="layui-btn layui-btn-primary" style="float:left;">重置</button>
+				<button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1" style="float: right;">立即登录</button>
+			</div>
+		</div>
+		</form>
+		<!-- 资 源 引 入 -->
+		<script src="/static/Admin-Layui/component/layui/layui.js"></script>
+		<script src="/static/Admin-Layui/component/pear/pear.js"></script>
+		<script>
+			layui.use(['form', 'button', 'popup'], function() {
+				var form = layui.form;
+				var button = layui.button;
+				var popup = layui.popup;
+				
+                // 登 录 提 交
+				form.on('submit(login)', function(data) {
+					
+					/// 验证
+					
+					/// 登录
+					
+					/// 动画
+					button.load({
+						elem: '.login',
+						time: 1500,
+						done: function() {
+							popup.success("登录成功", function() {
+								location.href = "index.html"
+							});
+						}
+					})
+					return false;
+				
+				});
+			})
+		</script>
+	</body>
+</html>

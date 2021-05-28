@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.w.crmsystem.mapper.PotentialcustomerMapper" >
+  <resultMap id="BaseResultMap" type="com.w.crmsystem.domain.Potentialcustomer" >
+    <id column="pc_id" property="pcId" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="age" property="age" jdbcType="INTEGER" />
+    <result column="gender" property="gender" jdbcType="VARCHAR" />
+    <result column="tel" property="tel" jdbcType="VARCHAR" />
+    <result column="qq" property="qq" jdbcType="VARCHAR" />
+    <result column="job_id" property="jobId" jdbcType="INTEGER" />
+    <result column="source_id" property="sourceId" jdbcType="INTEGER" />
+    <result column="seller_id" property="sellerId" jdbcType="INTEGER" />
+    <result column="inputUser_id" property="inputuserId" jdbcType="INTEGER" />
+    <result column="inputTime" property="inputtime" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="positiveTime" property="positivetime" jdbcType="VARCHAR"/>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    pc_id, name, age, gender, tel, qq, job_id,  source_id,
+    seller_id, inputUser_id, inputTime, status,positiveTime
+  </sql>
+  <!--查询的表：potentialcustomer-->
+
+  <!--普通分页查询-->
+  <select id="queryAll" resultMap="BaseResultMap">
+    select * from potentialcustomer limit #{offset},#{limit};
+  </select>
+
+  <!--条件分页查询-->
+  <select id="queryByKey" resultMap="BaseResultMap">
+    select * from potentialcustomer
+    <where>
+      <if test="keyword!=null and keyword!=''">
+        name like concat('%',#{keyword},'%') or tel like concat('%',#{keyword},'%')
+      </if>
+      <if test="state!=null and keyword!=null and keyword!=''">
+        and
+      </if>
+      <if test="state!=null">
+        status=#{state}
+      </if>
+    </where>
+    limit #{offset},#{limit};
+  </select>
+
+  <!--普通查询总数-->
+  <select id="countAll" resultType="int">
+    select count(*) from potentialcustomer;
+  </select>
+  <!--条件查询总数-->
+  <select id="countByKey" resultType="int">
+    select count(*) from potentialcustomer
+    <where>
+      <if test="keyword!=null and keyword!=''">
+        name like concat('%',#{keyword},'%') or tel like concat('%',#{keyword},'%')
+      </if>
+      <if test="state!=null and keyword!=null and keyword!=''">
+        and
+      </if>
+      <if test="state!=null">
+        status=#{state}
+      </if>
+    </where>;
+  </select>
+
+
+
+  <!--添加客户信息-->
+  <insert id="addPotentialInfo" parameterType="Potentialcustomer">
+    insert into potentialcustomer (name, age, gender, tel, qq, job_id,  source_id,seller_id, inputUser_id, inputTime, status) values (#{name}, #{age}, #{gender}, #{tel}, #{qq}, #{jobId}, #{sourceId}, #{sellerId}, #{inputuserId}, #{inputtime}, #{status});
+  </insert>
+  <!--修改客户信息-->
+  <update id="updatePotentialInfo" parameterType="Potentialcustomer">
+    update potentialcustomer
+    <trim prefix="set" suffixOverrides=",">
+      <if test="name!=null and name!=''">
+        name=#{name},
+      </if>
+      <if test="age!=null">
+        age=#{age},
+      </if>
+      <if test="gender!=null and gender!=''">
+        gender=#{gender},
+      </if>
+      <if test="tel!=null and tel!=''">
+        tel=#{tel},
+      </if>
+      <if test="qq!=null and qq!=''">
+        qq=#{qq},
+      </if>
+      <if test="jobId!=null and jobId!=''">
+        job_id=#{jobId},
+      </if>
+      <if test="sourceId!=null and sourceId!=''">
+        source_id=#{sourceId},
+      </if>
+      <if test="sellerId!=null">
+        seller_id=#{sellerId},
+      </if>
+      <if test="positivetime!=null">
+        positiveTime=#{positivetime},
+      </if>
+    </trim>
+    where pc_id=#{pcId};
+  </update>
+  <!--改变客户状态-->
+  <update id="changeState">
+    update potentialcustomer set  status=#{state}  where pc_id=#{pcId};
+  </update>
+
+  <!--普通查询总数只是查询 -2 1-->
+  <select id="countLimitStatusAll" resultType="int">
+    select count(*) from potentialcustomer where status=-2 or status=1;
+  </select>
+  <!--条件查询总数-->
+  <select id="countLimitStatusByKey" resultType="int">
+    select count(*) from potentialcustomer
+    <where>
+      <if test="keyword!=null and keyword!=''">
+        name like concat('%',#{keyword},'%') or tel like concat('%',#{keyword},'%')
+      </if>
+      <if test="state!=null and keyword!=null and keyword!=''">
+        and
+      </if>
+      <if test="state!=null">
+        status=#{state}
+      </if>
+    </where>;
+  </select>
+  <!--普通分页查询只是查询 -2 1-->
+  <select id="queryLimitStatusAll" resultMap="BaseResultMap">
+    select * from potentialcustomer where  status=-2 or status=1  group by inputTime desc limit #{offset},#{limit};
+  </select>
+
+  <!--条件分页查询-->
+  <select id="queryLimitStatusByKey" resultMap="BaseResultMap">
+    select * from potentialcustomer
+    <where>
+      <if test="keyword!=null and keyword!=''">
+        (name like concat('%',#{keyword},'%') or tel like concat('%',#{keyword},'%'))
+      </if>
+      <if test="state!=null and keyword!=null and keyword!=''">
+        and
+      </if>
+      <if test="state!=null">
+        status=#{state}
+      </if>
+      <if test="state==null">
+         and (status=-2 or status=1)
+      </if>
+    </where>
+    group by inputTime desc
+    limit #{offset},#{limit};
+  </select>
+
+  <!--根据ID 搜索客户姓名-->
+  <select id="queryById" resultType="java.lang.String">
+    select name from potentialcustomer where pc_id=#{pcId}
+  </select>
+
+</mapper>

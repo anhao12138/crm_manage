@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.w.crmsystem.mapper.DirdetialMapper">
+
+    <!--查询表：dirdetial 中间表：detaildirectory-->
+    <resultMap id="BaseResultMap1" type="com.w.crmsystem.domain.Dirdetial">
+        <id column="dirdetial_id" property="dirdetailId"/>
+        <result column="title" property="title"/>
+        <result column="sequence" property="sequence"/>
+    </resultMap>
+    <resultMap id="BaseResultMap2" type="com.w.crmsystem.domain.DirdetialExample">
+        <id column="dirdetial_id" property="dirdetailId"/>
+        <result column="title" property="title"/>
+        <result column="sequence" property="sequence"/>
+        <result column="dir_id" property="dicdirId"/>
+    </resultMap>
+    <sql id="Base_SQL_Field">
+        dirdetail_id,title,sequence
+    </sql>
+
+    <!--普通分页查询-->
+    <select id="queryDeatilInfo" resultMap="BaseResultMap2">
+        select * from dirdetial i inner join detaildirectory d on i.dirdetial_id=d.det_id limit #{offset},#{limit};
+    </select>
+
+    <!--带条件的分页查询-->
+    <select id="queryDeatilInfoByKey" resultMap="BaseResultMap2">
+        select * from dirdetial i inner join detaildirectory d on i.dirdetial_id=d.det_id
+        <trim>
+            <if test="dirdicId!=null">
+                and d.dir_id=#{dirdicId}
+            </if>
+        </trim>
+
+        <where>
+            <if test="key!=null and key!=''">
+                title like concat('%',#{key},'%')
+            </if>
+
+        </where>
+        limit #{offset},#{limit};
+    </select>
+
+
+    <!--普通查询总数-->
+    <select id="countAll" resultType="int">
+        select count(*) from dirdetial;
+    </select>
+
+
+    <!--带条件查询总数-->
+    <select id="countByKey" resultType="int">
+        select count(*) from dirdetial i inner join detaildirectory d on i.dirdetial_id=d.det_id
+        <if test="dirdicId!=null">
+            and d.dir_id=#{dirdicId}
+        </if>
+        <where>
+            <if test="key!=null and key!=''">
+                title like concat('%',#{key},'%')
+            </if>
+
+        </where>
+    </select>
+
+    <!--新增数据字典详细-->
+    <insert id="addDirDetailInfo" parameterType="Dirdetial" useGeneratedKeys="true" keyColumn="dirdetail_id" keyProperty="dirdetailId">
+        insert into dirdetial (title,sequence) values (#{title},#{sequence});
+    </insert>
+
+
+    <!--更新数据字典详细-->
+    <update id="updateDirDetail" parameterType="Dirdetial">
+        update dirdetial
+        <set>
+            <if test="title!=null and title!=''">
+                title=#{title},
+            </if>
+            <if test="sequence!=null">
+                sequence=#{sequence}
+            </if>
+        </set>
+        where dirdetial_id=#{dirdetailId};
+    </update>
+
+    <!--删除数据字典详细-->
+    <delete id="delByIdDirDetail" >
+        delete from dirdetial where dirdetial_id=#{dirdeId}
+    </delete>
+
+    <select id="queryDetailByDataId" resultType="com.w.crmsystem.base.DetailInfoExample">
+        SELECT i.dirdetial_id as id,i.title from dirdetial i LEFT JOIN detaildirectory e on i.dirdetial_id=e.det_id LEFT JOIN datadictionary d on e.dir_id=d.dicdir_id
+        where d.title like concat('%',#{title},'%');
+    </select>
+</mapper>

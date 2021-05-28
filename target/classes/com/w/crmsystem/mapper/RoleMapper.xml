@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.w.crmsystem.mapper.RoleMapper" >
+  <resultMap id="BaseResultMap" type="com.w.crmsystem.domain.Role" >
+    <id column="role_id" property="roleId" jdbcType="INTEGER" />
+    <result column="sn" property="sn" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    role_id, sn, name
+  </sql>
+
+  <select id="findById" resultMap="BaseResultMap">
+    select role_id,sn,name from role where role_id=#{roleId}
+  </select>
+
+  <!--查询所有角色-->
+  <select id="queryAll" resultMap="BaseResultMap">
+    select * from role
+  </select>
+
+  <!--分页查询角色信息包括权限信息-->
+  <select id="queryAllLimitRole" resultMap="BaseResultMap">
+    select * from role limit #{offset},#{limit}
+  </select>
+
+  <!--通过ID删除角色信息-->
+  <delete id="delRoleById">
+    delete from role where role_id=#{roleId}
+  </delete>
+  
+  <!--添加角色信息-->
+  <insert id="addRoleInfo" useGeneratedKeys="true" keyProperty="roleId" keyColumn="role_id">
+    insert into role (sn,name) values (#{sn},#{name});
+  </insert>
+
+  <!--更新角色信息-->
+  <update id="updateRoleInfo">
+    update role
+    <set>
+      <if test="sn!=null and sn!=''">
+        sn=#{sn}
+      </if>
+      <if test="name!=null and name!='' and sn!=null and sn!=''">
+        ,
+      </if>
+      <if test="name!=null and name!=''">
+        name=#{name}
+      </if>
+    </set>
+    where role_id=#{roleId};
+  </update>
+</mapper>

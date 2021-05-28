@@ -1,0 +1,62 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.2.xsd
+
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:component-scan base-package="com.w.crmsystem.*"/>
+    <context:property-placeholder location="db.properties"/>
+    <!--配置druid连接池-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+    </bean>
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="typeAliasesPackage" value="com.w.crmsystem.domain"/>
+    </bean>
+
+    <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.w.crmsystem.mapper"/>
+    </bean>
+
+    <!--配置事务-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--添加数据源-->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!--增强-->
+    <tx:advice id="tdAdvice"  transaction-manager="transactionManager">
+    <tx:attributes>
+    <!--设置方法名一般前缀最好是有一定规律的，方便配置事务-->
+    <!--设置所有方法-->
+    <tx:method name="*"/>
+    <!--匹配以get,query开头的方法 且只以只读方式，只读一般只用于查询语句-->
+    <!--如果设置了read-only=true的话，是不会执行回滚等操作的，因为查询语句不需要commit-->
+    <tx:method name="get*" read-only="true"/>
+    <tx:method name="query*" read-only="true"/>
+    </tx:attributes>
+    </tx:advice>
+    <aop:config>
+    <!--配置切入点 expression就是匹配规则-->
+    <aop:pointcut id="txPoint" expression="execution(* com.w.crmsystem.service.impl.*ServiceImpl.*(..))"/>
+    <!--见名知意 adivice-ref：选择增强点    pointcut-ref：选择切入点-->
+    <aop:advisor advice-ref="tdAdvice" pointcut-ref="txPoint"/>
+    </aop:config>
+
+
+</beans>

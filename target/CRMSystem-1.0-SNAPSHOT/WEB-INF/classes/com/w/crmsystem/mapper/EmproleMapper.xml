@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.w.crmsystem.mapper.EmproleMapper" >
+  <resultMap id="BaseResultMap" type="com.w.crmsystem.domain.Emprole" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="emp_id" property="empId" jdbcType="INTEGER" />
+    <result column="role_id" property="roleId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, emp_id, role_id
+  </sql>
+  <select id="findByUserId" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"/> from emprole where emp_id=#{record}
+  </select>
+
+  <!--查询指定用户所拥有的的角色Id-->
+  <select id="queryRoleIds" resultType="INTEGER">
+    select role_id from emprole where emp_id=#{empId};
+  </select>
+
+  <!--依据empId删除所有相关的中间表信息-->
+  <delete id="delBatchById">
+    delete from emprole where emp_id=#{empId}
+  </delete>
+
+  <!--添加当前empId所有的role-->
+  <insert id="addEmprole">
+    insert into emprole (emp_id,role_id) values
+    <foreach collection="list" item="item" separator=",">
+      (#{empId},#{item})
+    </foreach>
+  </insert>
+</mapper>

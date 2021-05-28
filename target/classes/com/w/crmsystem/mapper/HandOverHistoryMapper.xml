@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.w.crmsystem.mapper.HandOverHistoryMapper">
+
+    <resultMap id="BaseResultMap" type="com.w.crmsystem.domain.HandOverHistory">
+        <id column="handover_id" property="handoverId"/>
+        <result column="customer_id" property="customerId"/>
+        <result column="transUser" property="transUser"/>
+        <result column="transTime" property="transTime"/>
+        <result column="oldSeller_id" property="oldSellerId"/>
+        <result column="newSeller_id" property="newSellerId"/>
+        <result column="transReason" property="transReason"/>
+    </resultMap>
+
+    <resultMap id="BaseResultMap1" type="com.w.crmsystem.domain.HandOverHistoryExample">
+
+        <result column="transUser" property="transUser"/>
+        <result column="transTime" property="transTime"/>
+        <result column="oldSeller_id" property="oldSellerId"/>
+        <result column="newSeller_id" property="newSellerId"/>
+        <result column="transReason" property="transReason"/>
+        <result column="name" property="name"/>
+    </resultMap>
+    <!--数据库表：handoverhis-->
+    <sql id="Base_SQL_Field">
+        handover_id,customer_id,transUser,transTime,oldSeller_id,newSeller_id,transReason
+    </sql>
+
+    <!--添加移交历史-->
+    <insert id="addHandOverhis" parameterType="HandOverHistory">
+        insert into handoverhis (customer_id,transUser,transTime,oldSeller_id,newSeller_id,transReason) values (#{customerId},#{transUser},#{transTime},#{oldSellerId},#{newSellerId},#{transReason});
+    </insert>
+
+
+    <!--普通分页查询-->
+    <select id="queryAll" resultMap="BaseResultMap1">
+        SELECT h.transUser,h.transTime,h.oldSeller_id,h.newSeller_id,h.transReason,p.name from handoverhis h LEFT JOIN potentialcustomer p on h.customer_id=p.pc_id  limit #{offset},#{limit}
+    </select>
+
+    <!--普通查询总数-->
+    <select id="countAll" resultType="int">
+        select count(*) from handoverhis h LEFT JOIN potentialcustomer p on h.customer_id=p.pc_id
+    </select>
+
+    <!--条件分页查询-->
+    <select id="queryByKey" resultMap="BaseResultMap1">
+        select h.transUser,h.transTime,h.oldSeller_id,h.newSeller_id,h.transReason,p.name from handoverhis h LEFT JOIN potentialcustomer p on h.customer_id=p.pc_id
+        <trim prefix="where" suffixOverrides="and">
+            <if test="keyword!=null  and keyword!=''">
+                (name like concat('%',#{keyword},'%')) and
+            </if>
+            <if test="startTime!=null  and startTime!=''">
+                transTime>=#{startTime} and
+            </if>
+            <if test="endTime!=null  and endTime!=''">
+                transTime&lt;=#{endTime} and
+            </if>
+
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!--条件查询总数-->
+    <select id="countByKey" resultType="int">
+        select count(*) from handoverhis h LEFT JOIN potentialcustomer p on h.customer_id=p.pc_id
+        <trim prefix="where" suffixOverrides="and">
+            <if test="keyword!=null  and keyword!=''">
+                name like concat('%',#{keyword},'%') and
+            </if>
+            <if test="startTime!=null  and startTime!=''">
+                transTime>=#{startTime} and
+            </if>
+            <if test="endTime!=null  and endTime!=''">
+                transTime&lt;=#{endTime} and
+            </if>
+
+        </trim>
+    </select>
+</mapper>

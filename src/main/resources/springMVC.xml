@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <context:component-scan base-package="com.w.crmsystem.controller"/>
+
+    <!--静态资源-->
+    <mvc:default-servlet-handler/>
+    <!--注解扫描开启-->
+    <mvc:annotation-driven/>
+
+    <!--视图解析器-->
+    <!-- 配置内部视图解析器 -->
+    <!--  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+          <property name="prefix" value="/WEB-INF/"/>
+          <property name="suffix" value=".jsp"/>
+      </bean>-->
+
+    <mvc:resources mapping="/static/**" location="/static/"/>
+    <!--viewResolver-->
+    <bean id="viewResolver" class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
+        <property name="order" value="1"/>
+        <property name="characterEncoding" value="UTF-8"/>
+        <property name="templateEngine" ref="templateEngine"/>
+    </bean>
+    <!-- templateEngine -->
+    <bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
+        <property name="templateResolver" ref="templateResolver"/>
+        <property name="additionalDialects">
+            <set>
+                <bean class="at.pollux.thymeleaf.shiro.dialect.ShiroDialect"/>
+            </set>
+        </property>
+    </bean>
+    <bean id="templateResolver" class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
+    <!-- 寻找模板的路径  -->
+        <property name="prefix" value="/WEB-INF/templates/views/"/>
+        <!-- 界面后缀-->
+        <property name="suffix" value=".html"/>
+        <property name="templateMode" value="HTML5"/>
+        <property name="characterEncoding" value="UTF-8"/>
+        <!--<property name="cacheable" value="false"></property>-->
+    </bean>
+    <!--templateEngine -->
+    <!--<mvc:resources mapping="/**" location="/WEB-INF/templates/views/" />-->
+
+    <!-- rememberMeManager管理器，写cookie，取出cookie生成用户信息 -->
+    <bean id="rememberMeManager" class="org.apache.shiro.web.mgt.CookieRememberMeManager">
+        <property name="cookie" ref="rememberMeCookie" />
+    </bean>
+    <!-- 记住我cookie -->
+    <bean id="rememberMeCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+        <!-- rememberMe是cookie的名字 -->
+        <constructor-arg value="rememberMe" />
+        <!-- 记住我cookie生效时间30天 -->
+        <property name="maxAge" value="2592000" />
+    </bean>
+
+</beans>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>潜在客户报表</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/lay-uis/css/layui.css" media="all">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <table class="layui-hide" id="test" lay-filter="test"></table>
+
+    <script type="text/html" id="toolbarDemo">
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width:auto;font-weight:bolder;border-radius: 2px;padding: 0px;"></label>
+                <div class="layui-input-inline">
+                    <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入姓名" class="layui-input">
+                </div>
+                <div class="layui-input-inline" style="margin-left: 30px" >
+                    <div class="layui-inline">
+                        <div class="layui-input-inline" style="width: 160px;float:left;">
+                            <input type="text" class="layui-input" id="start_time1"name="start_time" placeholder="开始时间">
+                        </div>
+                        <div class="layui-form-mid" style="margin-left: 5px"> 至</div>
+                        <div class="layui-input-inline" style="width: 160px;float: right">
+                            <input type="text" class="layui-input" id="end_time1" name="end_time" placeholder="结束时间">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label" style="width:auto;font-weight:bolder;border-radius: 2px;"></label>
+                    <div class="layui-input-inline">
+                        <select name="modules" lay-verify="required" lay-search="">
+                            <option value="0">员工</option>
+                            <option value="1">年</option>
+                            <option value="2">月</option>
+                            <option value="3">日</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="layui-btn layui-btn-primary">查询</button>
+            </div>
+            <a th:href="@{/echars_b.do}" class="layui-btn layui-btn-sm layui-btn-warm">饼状图</a>
+            <a th:href="@{/echars_z.do}" class="layui-btn layui-btn-sm layui-border-orange">柱状图</a>
+        </form>
+    </script>
+
+    <script id="headBar" type="text/html">
+
+        <div class="layui-form" >
+
+            <div class="layui-input-inline">
+                <input type="text" id="keyword" lay-verify="title" autocomplete="off" placeholder="请输入待查询客户姓名" class="layui-input">
+            </div>
+
+            <div class="layui-input-inline" style="margin-left: 30px" >
+                <div class="layui-inline">
+                    <div class="layui-input-inline" style="width: 160px;float:left;">
+                        <input  autocomplete="off" type="text" class="layui-input" id="start_time"name="start_time" placeholder="开始时间">
+                    </div>
+                    <div class="layui-form-mid" style="margin-left: 5px"> 至</div>
+                    <div class="layui-input-inline" style="width: 160px;float: right">
+                        <input autocomplete="off" type="text" class="layui-input" id="end_time" name="end_time" placeholder="结束时间">
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-input-inline" style="width: 100px;margin-left: 25px">
+                <select id="groupType" lay-verify="required">
+                    <option value="0">员工</option>
+                    <option value="1">年</option>
+                    <option value="2">月</option>
+                    <option value="3">日</option>
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <button type="button" class="layui-btn" lay-event="selectInfo">查询</button>
+            </div>
+
+        </div>
+        <div class="layui-form-item" style="margin-top: 25px">
+            <a th:href="@{/echars_b.do}" class="layui-btn layui-btn-sm layui-btn-warm" >饼状图</a>
+            <a th:href="@{/echars_z.do}" class="layui-btn layui-btn-sm layui-border-orange" style="margin-left: 20px">柱状图</a>
+        </div>
+    </script>
+
+</body>
+<script src="static/lay-uis/layui.js"></script>
+<script>
+    layui.use(['table', 'laydate','form','util','jquery'], function() {
+        var table = layui.table,
+            laydate=layui.laydate,
+            util=layui.util,
+            $=layui.jquery,
+            form = layui.form;
+
+        form.render()
+        var startTime=laydate.render({
+            elem: '#start_time',
+            trigger: 'click',
+
+            max:util.toDateString(getCurrentDate(),"yyyy-MM-dd"),
+            done:function(value,date){
+                endTime.config.min ={
+                    year:date.year,
+                    month:date.month-1,
+                    date: date.date,
+                };
+            }
+        });
+        var endTime=laydate.render({
+            elem: '#end_time',
+            trigger: 'click',
+            max:util.toDateString(getCurrentDate(),"yyyy-MM-dd"),
+            done:function(value,date){
+                startTime.config.max={
+                    year:date.year,
+                    month:date.month-1,
+                    date: date.date,
+
+                }
+            }
+        });
+        table.render({
+            elem: '#test',
+            url:'report/queryAllByInfo.do',
+            toolbar: '#headBar', //开启头部工具栏，并为其绑定左侧模板
+            id: 'idTest',
+            cellMinWidth: 80,
+            cols: [
+                [{
+                    type: 'numbers',
+                    title: "序号",
+                    width: 80,
+                }, {
+                    field: 'groupType',
+                    title: "分组类型",
+                    width: 220,
+                    templet: '#usernameTpl',
+                }, {
+                    field: 'number',
+                    title: '潜在用户新增数',
+                    templet: '#usernameTpl',
+                }]
+            ],
+            page: true
+        });
+
+
+        table.on('toolbar(test)',function (obj) {
+            switch (obj.event) {
+                case 'selectInfo':
+                    console.log($("#groupType").val())
+                    table.reload('idTest',{
+                        url:'report/queryAllByInfo.do',
+                        where:{
+                            groupType:$("#groupType").val(),
+                            name:$("#keyword").val(),
+                            startTime:$("#start_time").val(),
+                            endTime:$("#end_time").val()
+                        },
+                        page:{
+                            curr:1
+                        }
+                    })
+                    var startTime=laydate.render({
+                        elem: '#start_time',
+                        trigger: 'click',
+
+                        max:util.toDateString(getCurrentDate(),"yyyy-MM-dd"),
+                        done:function(value,date){
+                            endTime.config.min ={
+                                year:date.year,
+                                month:date.month-1,
+                                date: date.date,
+                            };
+                        }
+                    });
+                    var endTime=laydate.render({
+                        elem: '#end_time',
+                        trigger: 'click',
+                        max:util.toDateString(getCurrentDate(),"yyyy-MM-dd"),
+                        done:function(value,date){
+                            startTime.config.max={
+                                year:date.year,
+                                month:date.month-1,
+                                date: date.date,
+
+                            }
+                        }
+                    });
+                    break;
+            }
+        })
+    });
+
+    function getCurrentDate() {
+        return new Date()
+    }
+
+
+</script>
+
+</html>

@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.w.crmsystem.mapper.ReportMapper">
+
+    <resultMap id="BaseResultMap" type="com.w.crmsystem.base.ReportExample">
+        <result column="groupType" property="groupType"/>
+        <result column="number" property="number"/>
+    </resultMap>
+    <resultMap id="CakeResultMap" type="com.w.crmsystem.base.CakeInfo">
+        <result column="value" property="value"/>
+        <result column="name" property="name"/>
+    </resultMap>
+
+
+    <sql id="whereInclude">
+        <trim prefix="where" suffixOverrides="and">
+            <if test="endTime!=null and endTime!=''">
+                p.inputTime&lt;=#{endTime} and
+            </if>
+            <if test="startTime!=null and startTime!=''">
+                p.inputTime>=#{startTime} and
+            </if>
+            <if test="name!=null and name!=''">
+                e.realName like concat('%',#{name},'%')
+            </if>
+
+        </trim>
+    </sql>
+    <select id="queryAllByKey" resultMap="BaseResultMap">
+        select ${typeInfoStr} as groupType,count(*) as number from potentialcustomer p INNER JOIN employee e on p.seller_id=e.emp_id
+        <include refid="whereInclude"/>
+        GROUP BY groupType
+        limit #{offset},#{limit}
+    </select>
+    <select id="countAllByKey" resultType="int">
+        select count(*) from (select ${typeInfoStr} as groupType,count(*) as number from potentialcustomer p INNER JOIN employee e on p.seller_id=e.emp_id
+        <include refid="whereInclude"/>
+        GROUP BY groupType) as t
+    </select>
+
+    <!--查询数据供饼状图使用-->
+    <select id="queryOfCake" resultMap="CakeResultMap">
+        select DATE_FORMAT(p.inputTime,"%Y-%m") as name,count(*) as value from potentialcustomer p INNER JOIN employee e on p.seller_id=e.emp_id where  p.inputTime&lt;=#{endTime} and p.inputTime>=#{startTime} GROUP BY name desc
+    </select>
+
+    <!--查询数据供柱状图使用-->
+    <select id="queryOfColunm"  resultMap="CakeResultMap">
+        select DATE_FORMAT(p.inputTime,"%Y-%m") as name,count(*) as value from potentialcustomer p INNER JOIN employee e on p.seller_id=e.emp_id where p.inputTime&lt;=#{endTime} and p.inputTime>=#{startTime} and (e.username like concat('%',#{username},'%')) GROUP BY name desc
+    </select>
+</mapper>

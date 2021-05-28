@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.w.crmsystem.mapper.RolepermissionMapper" >
+  <resultMap id="BaseResultMap" type="com.w.crmsystem.domain.Rolepermission" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="role_id" property="roleId" jdbcType="INTEGER" />
+    <result column="per_id" property="perId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, role_id, per_id
+  </sql>
+  <select id="findByRoleIdIn" resultMap="BaseResultMap">
+    select id,role_id,per_id from rolepermission where role_id IN
+    <foreach collection="list" item="roleId" open="(" close=")" separator=",">
+      #{roleId}
+    </foreach>
+    GROUP BY per_id
+  </select>
+
+  <!--添加中间表数据-->
+  <insert id="addRolePermission">
+    insert into rolepermission (role_id,per_id) values
+    <foreach collection="list" item="perId" separator=",">
+      (#{roleId},#{perId})
+    </foreach>;
+  </insert>
+
+  <!--删除中间表中的权限-->
+  <delete id="delByRoleId">
+    delete from rolepermission where role_id=#{roleId}
+  </delete>
+
+  <!--查询by Id-->
+  <select id="findByRoleId" resultMap="BaseResultMap">
+    select * from rolepermission where role_id=#{roleId} group by per_id
+  </select>
+</mapper>

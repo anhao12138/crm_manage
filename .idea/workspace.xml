@@ -1,0 +1,1295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="CRMSystemLayuimini:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f2439681-44d3-492a-ae89-d630c4549891" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/base/CakeInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/base/Report.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/base/ReportEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/base/ReportExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/controller/admin/FAILCustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/controller/admin/LostCustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/controller/admin/ReportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/ResultColumn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/mapper/ReportMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/ReportService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/impl/ReportServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/util/DateChange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/w/crmsystem/mapper/ReportMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/clientMan/FailCustomer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/clientMan/lostCustomer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/reportMan/line.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/css/admin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/css/load.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/css/other/console1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/css/other/console2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/css/other/department.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/css/other/error.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/css/other/icon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/css/other/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/css/other/person.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/css/other/result.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/data/card.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/data/dataMenu.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/data/dataTree2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/data/dictData.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/data/dictType.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/data/dtree.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/data/loginLog.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/data/menu.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/data/message.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/data/operateLog.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/data/organization.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/data/organizationtree.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/data/power.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/data/role.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/data/table.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/data/user.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/images/403.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/images/404.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/images/500.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/images/act.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/images/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/images/background.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/images/captcha.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/admin/images/show.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/code/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/code/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/layui/css/layui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/layui/css/modules/code.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/layui/css/modules/laydate/default/laydate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/layui/css/modules/layer/default/icon-ext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/layui/css/modules/layer/default/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/layui/css/modules/layer/default/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/layui/css/modules/layer/default/loading-0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/layui/css/modules/layer/default/loading-1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/layui/css/modules/layer/default/loading-2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/layui/font/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/layui/font/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/layui/font/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/layui/font/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/layui/font/iconfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/layui/layui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/button.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/code.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/cropper.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/dtree/dtree.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/dtree/dtree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/dtree/font/dtreefont.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/dtree/font/dtreefont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/dtree/font/dtreefont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/dtree/font/dtreefont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/dtree/font/dtreefont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/dtree/font/icons.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/frame.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/iconPicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/label.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/layout.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/link.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/loading.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/menu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/message.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/notice.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/select.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/step.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/tab.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/table.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/tag.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/topBar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/module/treetable.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/css/pear.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/font/iconfont.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/font/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/font/iconfont.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/font/iconfont.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/font/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/font/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/font/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/font/iconfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/area.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/button.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/card.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/context.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/convert.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/count.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/cropper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/design.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/drawer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/dtree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/echarts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/echartsTheme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/frame.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/hash.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/http.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/iconPicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/loading.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/message.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/notice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/popup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/select.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/step.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tab.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/theme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/icons/default/icons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/icons/default/icons.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/langs/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/langs/zh_CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/advlist/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/advlist/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/anchor/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/anchor/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/autolink/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/autolink/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/autoresize/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/autoresize/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/autosave/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/autosave/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/bbcode/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/bbcode/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/charmap/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/charmap/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/code/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/code/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/codesample/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/codesample/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/colorpicker/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/colorpicker/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/contextmenu/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/contextmenu/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/directionality/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/directionality/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/emoticons/js/emojiimages.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/emoticons/js/emojiimages.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/emoticons/js/emojis.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/emoticons/js/emojis.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/emoticons/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/emoticons/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/fullpage/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/fullpage/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/fullscreen/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/fullscreen/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/help/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/help/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/hr/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/hr/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/image/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/image/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/imagetools/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/imagetools/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/importcss/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/importcss/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/indent2em/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/indent2em/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/insertdatetime/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/insertdatetime/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/legacyoutput/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/legacyoutput/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/link/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/link/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/lists/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/lists/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/media/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/media/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/nonbreaking/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/nonbreaking/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/noneditable/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/noneditable/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/pagebreak/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/pagebreak/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/paste/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/paste/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/preview/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/preview/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/print/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/print/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/quickbars/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/quickbars/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/save/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/save/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/searchreplace/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/searchreplace/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/spellchecker/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/spellchecker/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/tabfocus/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/tabfocus/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/table/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/table/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/template/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/template/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/textcolor/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/textcolor/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/textpattern/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/textpattern/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/toc/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/toc/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/visualblocks/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/visualblocks/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/visualchars/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/visualchars/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/wordcount/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/plugins/wordcount/plugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/content/dark/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/content/dark/content.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/content/dark/content.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/content/default/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/content/default/content.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/content/default/content.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/content/document/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/content/document/content.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/content/document/content.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/content/writer/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/content/writer/content.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/content/writer/content.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide-dark/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide-dark/content.inline.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide-dark/content.inline.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide-dark/content.inline.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide-dark/content.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide-dark/content.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide-dark/content.mobile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide-dark/content.mobile.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide-dark/content.mobile.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide-dark/fonts/tinymce-mobile.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide-dark/skin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide-dark/skin.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide-dark/skin.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide-dark/skin.mobile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide-dark/skin.mobile.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide-dark/skin.mobile.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide-dark/skin.shadowdom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide-dark/skin.shadowdom.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide-dark/skin.shadowdom.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide/content.inline.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide/content.inline.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide/content.inline.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide/content.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide/content.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide/content.mobile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide/content.mobile.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide/content.mobile.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide/fonts/tinymce-mobile.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide/skin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide/skin.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide/skin.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide/skin.mobile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide/skin.mobile.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide/skin.mobile.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide/skin.shadowdom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide/skin.shadowdom.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/skins/ui/oxide/skin.shadowdom.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/themes/mobile/theme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/themes/mobile/theme.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/themes/silver/theme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/themes/silver/theme.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/tinymce.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/tinymce/tinymce/tinymce.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/topBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/treetable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/module/yaml.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/component/pear/pear.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/config/pear.config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/config/pear.config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/console/console1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/console/console2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/area.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/button.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/card.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/count.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/drawer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/dtree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/hash.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/icon.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/iconPicker.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/loading.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/notice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/popup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/select.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/step.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/tab.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/tabContent.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/table.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/tag.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/tinymce.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/topBar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/document/treetable.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/echarts/column.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/echarts/line.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/echarts/script/column1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/echarts/script/column2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/echarts/script/column3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/echarts/script/column4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/echarts/script/line1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/echarts/script/line2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/echarts/script/line3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/echarts/script/line4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/error/403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/error/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/error/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/result/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/result/success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/system/deptment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/system/dict.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/system/log.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/system/operate/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/system/operate/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/system/operate/uploadProfile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/system/person.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/system/power.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/system/role.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/system/space.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/system/theme.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/Admin-Layui/view/system/user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/three.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/base/DetailInfoExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/base/DetailInfoExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/base/HomeInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/base/HomeInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/base/INITInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/base/INITInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/base/LogoInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/base/LogoInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/base/MenuInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/base/MenuInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/base/ResultInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/base/ResultInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/base/ResultSingleInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/base/ResultSingleInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/base/StateEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/base/StateEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/base/StateInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/base/StateInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/base/TraceTypeInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/base/TraceTypeInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/baseException/CrmBaseExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/baseException/CrmBaseExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/baseException/LoginException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/baseException/LoginException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/baseException/NullInfoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/baseException/NullInfoException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/config/MyConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/config/MyConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/config/MyWebFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/config/MyWebFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/controller/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/controller/admin/CustomerPoolController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/controller/admin/CustomerPoolController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/controller/admin/DataDictionaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/controller/admin/DataDictionaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/controller/admin/DepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/controller/admin/DepartmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/controller/admin/DirdetialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/controller/admin/DirdetialController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/controller/admin/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/controller/admin/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/controller/admin/FollowHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/controller/admin/FollowHistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/controller/admin/FormalCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/controller/admin/FormalCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/controller/admin/HandOverHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/controller/admin/HandOverHistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/controller/admin/PermissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/controller/admin/PermissionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/controller/admin/PotentialCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/controller/admin/PotentialCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/controller/admin/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/controller/admin/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/domain/DataDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/DataDictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/domain/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/domain/DetailDirectory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/DetailDirectory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/domain/Dirdetial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/Dirdetial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/domain/DirdetialExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/DirdetialExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/domain/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/domain/EmployeeExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/EmployeeExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/domain/Emprole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/Emprole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/domain/FollowHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/FollowHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/domain/FollowHistoryExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/FollowHistoryExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/domain/HandOverHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/HandOverHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/domain/HandOverHistoryExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/HandOverHistoryExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/domain/Permission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/Permission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/domain/Potentialcustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/Potentialcustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/domain/PotentialcustomerExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/PotentialcustomerExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/domain/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/domain/RoleExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/RoleExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/domain/Rolepermission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/Rolepermission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/domain/Systemdictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/Systemdictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/domain/Systemdictionaryitem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/domain/Systemdictionaryitem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/mapper/DataDictionaryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/mapper/DataDictionaryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/mapper/DepartmentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/mapper/DepartmentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/mapper/DetailDirectoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/mapper/DetailDirectoryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/mapper/DirdetialMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/mapper/DirdetialMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/mapper/EmployeeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/mapper/EmployeeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/mapper/EmproleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/mapper/EmproleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/mapper/FollowHistoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/mapper/FollowHistoryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/mapper/HandOverHistoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/mapper/HandOverHistoryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/mapper/PermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/mapper/PermissionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/mapper/PotentialcustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/mapper/PotentialcustomerMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/mapper/RoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/mapper/RoleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/mapper/RolepermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/mapper/RolepermissionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/mapper/SystemdictionaryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/mapper/SystemdictionaryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/mapper/SystemdictionaryitemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/mapper/SystemdictionaryitemMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/DataDictionaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/DataDictionaryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/DepartmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/DetailDirectoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/DetailDirectoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/DirdetialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/DirdetialService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/EmproleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/EmproleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/FollowHistoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/FollowHistoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/HandOverHistoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/HandOverHistoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/PermissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/PermissionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/PotentialcustomerSerivce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/PotentialcustomerSerivce.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/RolepermissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/RolepermissionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/SystemdictionaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/SystemdictionaryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/SystemdictionaryitemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/SystemdictionaryitemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/impl/DataDictionaryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/impl/DataDictionaryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/impl/DepartmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/impl/DepartmentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/impl/DetailDirectoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/impl/DetailDirectoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/impl/DirdetialServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/impl/DirdetialServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/impl/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/impl/EmployeeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/impl/EmproleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/impl/EmproleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/impl/FollowHistoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/impl/FollowHistoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/impl/HandOverHistoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/impl/HandOverHistoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/impl/PermissionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/impl/PermissionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/impl/PotentialcustomerSerivceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/impl/PotentialcustomerSerivceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/service/impl/RolepermissionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/service/impl/RolepermissionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/shiro/MyRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/shiro/MyRealm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/shiro/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/shiro/ShiroConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/util/CreateInitMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/util/CreateInitMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/util/ExcelRead.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/util/ExcelRead.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/util/PasswordUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/util/PasswordUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/knave/crmsystem/util/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/w/crmsystem/util/StringUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cn/knave/crmsystem/mapper/DataDictionaryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/w/crmsystem/mapper/DataDictionaryMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cn/knave/crmsystem/mapper/DepartmentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/w/crmsystem/mapper/DepartmentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cn/knave/crmsystem/mapper/DetailDirectoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/w/crmsystem/mapper/DetailDirectoryMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cn/knave/crmsystem/mapper/DirdetialMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/w/crmsystem/mapper/DirdetialMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cn/knave/crmsystem/mapper/EmployeeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/w/crmsystem/mapper/EmployeeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cn/knave/crmsystem/mapper/EmproleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/w/crmsystem/mapper/EmproleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cn/knave/crmsystem/mapper/FollowHistoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/w/crmsystem/mapper/FollowHistoryMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cn/knave/crmsystem/mapper/HandOverHistoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/w/crmsystem/mapper/HandOverHistoryMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cn/knave/crmsystem/mapper/PermissionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/w/crmsystem/mapper/PermissionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cn/knave/crmsystem/mapper/PotentialcustomerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/w/crmsystem/mapper/PotentialcustomerMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cn/knave/crmsystem/mapper/RoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/w/crmsystem/mapper/RoleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cn/knave/crmsystem/mapper/RolepermissionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/w/crmsystem/mapper/RolepermissionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cn/knave/crmsystem/mapper/SystemdictionaryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/w/crmsystem/mapper/SystemdictionaryMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cn/knave/crmsystem/mapper/SystemdictionaryitemMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/w/crmsystem/mapper/SystemdictionaryitemMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/springMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/springMVC.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/cn/knave/crmsystem/EmployeeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/cn/knave/crmsystem/EmployeeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/clientHis/followHisMan.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/clientHis/followHisMan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/clientHis/handoverHisMan.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/clientHis/handoverHisMan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/clientMan/CustomerRePoll.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/clientMan/CustomerRePoll.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/clientMan/fmCustomerMan.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/clientMan/fmCustomerMan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/clientMan/potentialCustoMan.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/clientMan/potentialCustoMan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/dataMan/datadictionary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/dataMan/datadictionary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/reportMan/customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/reportMan/customer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/reportMan/echars_b.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/reportMan/echars_b.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/reportMan/echars_z.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/reportMan/echars_z.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/systemMan/employee.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/systemMan/employee.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/systemMan/permission.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/systemMan/permission.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/index1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/unauthorized.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/lay-uis/lay/modules/laydate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/lay-uis/lay/modules/laydate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/lay-uis/layui.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/lay-uis/layui.all.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/base/DetailInfoExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/base/HomeInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/base/INITInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/base/LogoInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/base/MenuInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/base/ResultInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/base/ResultSingleInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/base/StateEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/base/StateInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/base/TraceTypeInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/baseException/CrmBaseExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/baseException/LoginException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/baseException/NullInfoException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/config/MyConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/config/MyWebFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/controller/ViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/controller/admin/CustomerPoolController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/controller/admin/DataDictionaryController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/controller/admin/DepartmentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/controller/admin/DirdetialController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/controller/admin/EmployeeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/controller/admin/FollowHistoryController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/controller/admin/FormalCustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/controller/admin/HandOverHistoryController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/controller/admin/PermissionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/controller/admin/PotentialCustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/controller/admin/RoleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/domain/DataDictionary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/domain/Department.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/domain/DetailDirectory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/domain/Dirdetial.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/domain/DirdetialExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/domain/Employee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/domain/EmployeeExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/domain/Emprole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/domain/FollowHistory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/domain/FollowHistoryExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/domain/HandOverHistory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/domain/HandOverHistoryExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/domain/Permission.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/domain/Potentialcustomer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/domain/PotentialcustomerExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/domain/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/domain/RoleExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/domain/Rolepermission.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/domain/Systemdictionary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/domain/Systemdictionaryitem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/DataDictionaryMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/DataDictionaryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/DepartmentMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/DepartmentMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/DetailDirectoryMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/DetailDirectoryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/DirdetialMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/DirdetialMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/EmployeeMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/EmployeeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/EmproleMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/EmproleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/FollowHistoryMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/FollowHistoryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/HandOverHistoryMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/HandOverHistoryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/PermissionMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/PermissionMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/PotentialcustomerMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/PotentialcustomerMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/RoleMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/RoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/RolepermissionMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/RolepermissionMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/SystemdictionaryMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/SystemdictionaryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/SystemdictionaryitemMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/mapper/SystemdictionaryitemMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/DataDictionaryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/DepartmentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/DetailDirectoryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/DirdetialService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/EmployeeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/EmproleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/FollowHistoryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/HandOverHistoryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/PermissionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/PotentialcustomerSerivce.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/RoleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/RolepermissionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/SystemdictionaryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/SystemdictionaryitemService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/impl/DataDictionaryServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/impl/DepartmentServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/impl/DetailDirectoryServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/impl/DirdetialServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/impl/EmployeeServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/impl/EmproleServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/impl/FollowHistoryServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/impl/HandOverHistoryServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/impl/PermissionServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/impl/PotentialcustomerSerivceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/impl/RoleServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/service/impl/RolepermissionServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/shiro/MyRealm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/shiro/ShiroConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/util/CreateInitMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/util/ExcelRead.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/util/ParentMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/util/PasswordUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/cn/knave/crmsystem/util/StringUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/springMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/classes/springMVC.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/clientHis/followHisMan.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/clientHis/followHisMan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/clientHis/handoverHisMan.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/clientHis/handoverHisMan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/clientMan/CustomerRePoll.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/clientMan/CustomerRePoll.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/clientMan/fmCustomerMan.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/clientMan/fmCustomerMan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/clientMan/potentialCustoMan.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/clientMan/potentialCustoMan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/dataMan/datadictionary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/dataMan/datadictionary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/reportMan/customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/reportMan/customer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/reportMan/echars_b.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/reportMan/echars_b.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/reportMan/echars_z.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/reportMan/echars_z.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/systemMan/employee.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/systemMan/employee.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/systemMan/permission.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/admin/systemMan/permission.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/index1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/WEB-INF/templates/views/unauthorized.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/static/lay-uis/lay/modules/laydate.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/static/lay-uis/lay/modules/laydate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/static/lay-uis/layui.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/CRMSystem-1.0-SNAPSHOT/static/lay-uis/layui.all.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/base/DetailInfoExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/base/HomeInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/base/INITInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/base/LogoInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/base/MenuInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/base/ResultInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/base/ResultSingleInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/base/StateEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/base/StateInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/base/TraceTypeInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/baseException/CrmBaseExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/baseException/LoginException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/baseException/NullInfoException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/config/MyConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/config/MyWebFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/controller/ViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/controller/admin/CustomerPoolController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/controller/admin/DataDictionaryController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/controller/admin/DepartmentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/controller/admin/DirdetialController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/controller/admin/EmployeeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/controller/admin/FollowHistoryController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/controller/admin/FormalCustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/controller/admin/HandOverHistoryController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/controller/admin/PermissionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/controller/admin/PotentialCustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/controller/admin/RoleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/domain/DataDictionary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/domain/Department.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/domain/DetailDirectory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/domain/Dirdetial.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/domain/DirdetialExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/domain/Employee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/domain/EmployeeExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/domain/Emprole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/domain/FollowHistory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/domain/FollowHistoryExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/domain/HandOverHistory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/domain/HandOverHistoryExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/domain/Permission.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/domain/Potentialcustomer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/domain/PotentialcustomerExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/domain/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/domain/RoleExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/domain/Rolepermission.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/domain/Systemdictionary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/domain/Systemdictionaryitem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/DataDictionaryMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/DataDictionaryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/DepartmentMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/DepartmentMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/DetailDirectoryMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/DetailDirectoryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/DirdetialMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/DirdetialMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/EmployeeMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/EmployeeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/EmproleMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/EmproleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/FollowHistoryMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/FollowHistoryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/HandOverHistoryMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/HandOverHistoryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/PermissionMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/PermissionMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/PotentialcustomerMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/PotentialcustomerMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/RoleMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/RoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/RolepermissionMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/RolepermissionMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/SystemdictionaryMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/SystemdictionaryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/SystemdictionaryitemMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/mapper/SystemdictionaryitemMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/DataDictionaryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/DepartmentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/DetailDirectoryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/DirdetialService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/EmployeeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/EmproleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/FollowHistoryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/HandOverHistoryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/PermissionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/PotentialcustomerSerivce.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/RoleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/RolepermissionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/SystemdictionaryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/SystemdictionaryitemService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/impl/DataDictionaryServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/impl/DepartmentServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/impl/DetailDirectoryServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/impl/DirdetialServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/impl/EmployeeServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/impl/EmproleServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/impl/FollowHistoryServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/impl/HandOverHistoryServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/impl/PermissionServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/impl/PotentialcustomerSerivceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/impl/RoleServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/service/impl/RolepermissionServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/shiro/MyRealm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/shiro/ShiroConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/util/CreateInitMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/util/ExcelRead.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/util/ParentMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/util/PasswordUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/knave/crmsystem/util/StringUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springMVC.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cn/knave/crmsystem/EmployeeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cn/knave/crmsystem/EmployeeTest.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="CRMSystem" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="web-app3.0" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Mybatis-mapper" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="G:\VUE\apache-maven-3.6.1\repository" />
+        <option name="mavenHome" value="G:/VUE/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="G:\VUE\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+    <option name="vmOptions" value="-DarchetypeCatalog=internal" />
+  </component>
+  <component name="ProjectId" id="1sk1lTuu2o18O07bgwruqP7xcky" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1621400972918" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/views/admin/reportMan" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\大三\JAVA\CRMSystemLayuimini\src\main\webapp\WEB-INF\templates\views" />
+      <recent name="F:\java code\CRMSystemLayuimini\src\main\webapp\static\js" />
+      <recent name="F:\java code\CRMSystemLayuimini\src\main\webapp\WEB-INF\templates\views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\大三\JAVA\CRMSystemLayuimini\src\main\webapp\WEB-INF\templates\views\admin\reportMan" />
+      <recent name="G:\大三\JAVA\CRMSystemLayuimini\src\main\webapp\WEB-INF\templates\views" />
+      <recent name="G:\大三\JAVA\CRMSystemLayuimini\src\main\webapp\static\Admin-Layui\config" />
+      <recent name="G:\大三\JAVA\CRMSystemLayuimini\src\main\webapp\static\Admin-Layui\admin\data" />
+      <recent name="G:\大三\JAVA\CRMSystemLayuimini\src\main\webapp\WEB-INF\templates\views\admin" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="cn.knave.crmsystem.service.impl" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.361">
+    <configuration name="DateChange" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.knave.crmsystem.util.DateChange" />
+      <module name="CRMSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.knave.crmsystem.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeTest.CakeInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CRMSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.knave.crmsystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.knave.crmsystem" />
+      <option name="MAIN_CLASS_NAME" value="cn.knave.crmsystem.EmployeeTest" />
+      <option name="METHOD_NAME" value="CakeInfo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeTest.DataDictionary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CRMSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.knave.crmsystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.knave.crmsystem" />
+      <option name="MAIN_CLASS_NAME" value="cn.knave.crmsystem.EmployeeTest" />
+      <option name="METHOD_NAME" value="DataDictionary" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeTest.ReportInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CRMSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.knave.crmsystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.knave.crmsystem" />
+      <option name="MAIN_CLASS_NAME" value="cn.knave.crmsystem.EmployeeTest" />
+      <option name="METHOD_NAME" value="ReportInfo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeTest.ServiceReportCake" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CRMSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.knave.crmsystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.knave.crmsystem" />
+      <option name="MAIN_CLASS_NAME" value="cn.knave.crmsystem.EmployeeTest" />
+      <option name="METHOD_NAME" value="ServiceReportCake" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.361" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.361" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="CRMSystemLayuimini:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_CRMSystem_2" />
+        <option name="HTTP_PORT" value="8089" />
+        <option name="JNDI_PORT" value="1097" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="57517" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="CRMSystem:war" />
+          <artifact name="CRMSystemLayuimini:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.DateChange" />
+      <item itemvalue="JUnit.EmployeeTest.DataDictionary" />
+      <item itemvalue="JUnit.EmployeeTest.ReportInfo" />
+      <item itemvalue="JUnit.EmployeeTest.CakeInfo" />
+      <item itemvalue="JUnit.EmployeeTest.ServiceReportCake" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.361" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.EmployeeTest.ServiceReportCake" />
+        <item itemvalue="JUnit.EmployeeTest.CakeInfo" />
+        <item itemvalue="Application.DateChange" />
+        <item itemvalue="JUnit.EmployeeTest.ReportInfo" />
+        <item itemvalue="JUnit.EmployeeTest.DataDictionary" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.18784153" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f2439681-44d3-492a-ae89-d630c4549891" name="Default Changelist" comment="" />
+      <created>1620549358760</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620549358760</updated>
+      <workItem from="1620549360488" duration="44874000" />
+      <workItem from="1620665558596" duration="4125000" />
+      <workItem from="1620708026657" duration="6891000" />
+      <workItem from="1620719587139" duration="11411000" />
+      <workItem from="1620740915146" duration="20670000" />
+      <workItem from="1620816069323" duration="126585000" />
+      <workItem from="1621230906778" duration="35066000" />
+      <workItem from="1621318644474" duration="12988000" />
+      <workItem from="1621401929089" duration="1386000" />
+      <workItem from="1621404067578" duration="14912000" />
+      <workItem from="1621511971147" duration="2557000" />
+      <workItem from="1621585884536" duration="1778000" />
+      <workItem from="1621738398851" duration="28359000" />
+      <workItem from="1621819415665" duration="25968000" />
+      <workItem from="1621923293414" duration="5654000" />
+      <workItem from="1621938109953" duration="8506000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="EmployeeTest_CakeInfo - 2021.05.18 at 02h 02m 14s.xml">
+      <configuration name="EmployeeTest.CakeInfo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EmployeeTest_CakeInfo - 2021.05.18 at 02h 02m 29s.xml">
+      <configuration name="EmployeeTest.CakeInfo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EmployeeTest_CakeInfo - 2021.05.18 at 02h 04m 25s.xml">
+      <configuration name="EmployeeTest.CakeInfo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EmployeeTest_CakeInfo - 2021.05.18 at 02h 07m 05s.xml">
+      <configuration name="EmployeeTest.CakeInfo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EmployeeTest_CakeInfo - 2021.05.18 at 02h 08m 00s.xml">
+      <configuration name="EmployeeTest.CakeInfo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EmployeeTest_CakeInfo - 2021.05.18 at 02h 10m 53s.xml">
+      <configuration name="EmployeeTest.CakeInfo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EmployeeTest_CakeInfo - 2021.05.18 at 02h 15m 54s.xml">
+      <configuration name="EmployeeTest.CakeInfo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EmployeeTest_CakeInfo - 2021.05.18 at 02h 16m 23s.xml">
+      <configuration name="EmployeeTest.CakeInfo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EmployeeTest_ServiceReportCake - 2021.05.18 at 02h 19m 01s.xml">
+      <configuration name="EmployeeTest.ServiceReportCake" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EmployeeTest_ServiceReportCake - 2021.05.18 at 02h 23m 43s.xml">
+      <configuration name="EmployeeTest.ServiceReportCake" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621402077328">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1621402077328" />
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1621934510949">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1621934510949" />
+    <state x="548" y="296" width="439" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1621767125915">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="548" y="296" width="439" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1621767125915" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1621839820496">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1621839820496" />
+    <state width="1188" height="208" key="GridCell.Tab.0.bottom" timestamp="1622013506491">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1188" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622013506491" />
+    <state width="1188" height="208" key="GridCell.Tab.0.center" timestamp="1622013506491">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1188" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1622013506491" />
+    <state width="1188" height="208" key="GridCell.Tab.0.left" timestamp="1622013506491">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1188" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1622013506491" />
+    <state width="1188" height="208" key="GridCell.Tab.0.right" timestamp="1622013506491">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1188" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1622013506491" />
+    <state width="1188" height="208" key="GridCell.Tab.1.bottom" timestamp="1622013506491">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1188" height="208" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622013506491" />
+    <state width="1188" height="208" key="GridCell.Tab.1.center" timestamp="1622013506491">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1188" height="208" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1622013506491" />
+    <state width="1188" height="208" key="GridCell.Tab.1.left" timestamp="1622013506491">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1188" height="208" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1622013506491" />
+    <state width="1188" height="208" key="GridCell.Tab.1.right" timestamp="1622013506491">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1188" height="208" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1622013506491" />
+    <state width="1188" height="208" key="GridCell.Tab.2.bottom" timestamp="1622013506492">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1188" height="208" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622013506492" />
+    <state width="1188" height="208" key="GridCell.Tab.2.center" timestamp="1622013506492">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1188" height="208" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1622013506492" />
+    <state width="1188" height="208" key="GridCell.Tab.2.left" timestamp="1622013506491">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1188" height="208" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1622013506491" />
+    <state width="1188" height="208" key="GridCell.Tab.2.right" timestamp="1622013506492">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1188" height="208" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1622013506492" />
+    <state x="270" y="54" key="SettingsEditor" timestamp="1621401961306">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1621401961306" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1621923445442">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1621923445442" />
+    <state x="499" y="176" key="extract.method.dialog" timestamp="1621771315981">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="176" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1621771315981" />
+    <state x="812" y="144" width="724" height="534" key="find.popup" timestamp="1621845444645">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="812" y="144" width="724" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1621845444645" />
+    <state x="360" y="106" key="new project wizard" timestamp="1621995431755">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="360" y="106" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1621995431755" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/w/crmsystem/controller/admin/EmployeeController.java</url>
+          <line>353</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>CRMSystem:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring|CRMSystem</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.alibaba:druid:1.1.9</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

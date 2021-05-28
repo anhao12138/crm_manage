@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>潜在客户管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/lay-uis/css/layui.css" media="all">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <!-- <table class="layui-hide" id="test" lay-filter="test"></table> -->
+    <table class="layui-hide" id="manager" lay-filter="manager"></table>
+
+    <script type="text/html" id="toolbarDemo">
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width:auto;font-weight:bolder;border-radius: 2px;padding: 0px;"></label>
+                <div class="layui-input-inline">
+                    <input type="text" id="keyword" lay-verify="title" autocomplete="off" placeholder="请输入姓名或电话" class="layui-input">
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label" style="width:auto;font-weight:bolder;border-radius: 2px;"></label>
+                    <div class="layui-input-inline">
+                        <select name="state" id="statekey" lay-verify="required" lay-search="">
+                            <option value="">全部</option>
+                            <option value="-2">流失</option>
+                            <option value="-1">开发失败</option>
+                            <option value="0">潜在客户</option>
+                            <option value="1">正式客户</option>
+                            <option value="2">资源池客户</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="layui-btn layui-btn-primary" lay-event="selectKey">&#12288;查&#12288;询&#12288;</button>
+                <button type="button" class="layui-btn" lay-event="addDep">添加客户</button>
+            </div>
+        </form>
+    </script>
+    <script type="text/html" id="toolDelEdit">
+        <div class="layui-btn-container" style="margin-top: 5px">
+            <button class="layui-btn layui-btn-xs" lay-event="edit">编辑</button>
+            {{# if(d.status===0||d.status===1){ }}
+            <button class="layui-btn layui-btn-xs layui-btn-normal" lay-event="run">跟进</button>
+            <button class="layui-btn layui-btn-xs layui-btn-warm" lay-event="move">移交</button>
+            {{# }else{ }}
+            <button class="layui-btn layui-btn-xs layui-btn-normal layui-btn-disabled" lay-event="run">跟进</button>
+            <button class="layui-btn layui-btn-xs layui-btn-warm layui-btn-disabled" lay-event="move">移交</button>
+            {{# } }}
+            <button class="layui-btn layui-btn-xs layui-btn-danger"  lay-event="update">修改状态</button>
+        </div>
+    </script>
+    <!-- 新增/编辑客户资料 -->
+    <script type="text/html" id="addWin">
+        <form class="layui-form" action="#" id="potentialInfo">
+            <input type="hidden" name="pcId" id="pcId1">
+            <div class="layui-form-item" style="margin-bottom: 20px;">
+                <label class="layui-form-label">姓名</label>
+                <div class="layui-input-block" style="width: 72%;margin-top: 20px;">
+                    <input type="text" name="name" id="name1" lay-verify="title" autocomplete="off" placeholder="请输入姓名" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">年龄</label>
+                <div class="layui-input-block" style="width: 72%;">
+                    <input type="text" name="age" lay-verify="title" id="age" autocomplete="off" placeholder="请输入年龄" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">性别</label>
+                <div class="layui-input-block" style="width: 72%;">
+                    <select name="gender" id="gender" lay-filter="departId" >
+                        <option value="男" selected>男</option>
+                        <option value="女">女</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">电话</label>
+                <div class="layui-input-block" style="width: 72%;">
+                    <input type="text" name="tel" lay-verify="title" id="tel" autocomplete="off" placeholder="请输入电话" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">Q&ensp;Q</label>
+                <div class="layui-input-block" style="width: 72%;">
+                    <input type="text" name="qq" lay-verify="title" id="qq" autocomplete="off" placeholder="请输入qq" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">职业</label>
+                <div class="layui-input-block" style="width: 72%;">
+                    <select name="jobId" id="jobId" lay-filter="departId" lay-search>
+
+                        <option th:each="t:${details}"  th:value="${t.id}" th:text="${t.title}">老板</option>
+
+                      </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">来源</label>
+                <div class="layui-input-block" style="width: 72%;">
+                    <select name="sourceId" id="sourceId" lay-filter="departId" lay-search>
+                        <option th:each="t:${sources}"  th:value="${t.id}" th:text="${t.title}">老板</option>
+
+                      </select>
+                </div>
+            </div>
+        </form>
+    </script>
+    <!-- 跟进记录 -->
+    <script type="text/html" id="addWin1">
+        <div class="layui-form-item" style="margin-bottom: 20px;">
+            <label class="layui-form-label">客户姓名</label>
+            <div class="layui-input-block" style="width: 72%;margin-top: 20px;">
+                <input type="text" name="name" id="name" lay-verify="title" autocomplete="off" placeholder="" class="layui-input" disabled="true">
+            </div>
+        </div>
+        <form class="layui-form" action="#" id="followInfo">
+            <input type="hidden" name="customerId" id="pcId">
+
+            <div class="layui-form-item">
+                <div class="layui-inline"  style="width: 87.6%;">
+                    <label class="layui-form-label">跟进时间</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="traceTime" id="traceTime" class="layui-input"  placeholder="跟进时间">
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">跟进方式</label>
+                <div class="layui-input-block" style="width: 72%;">
+                    <select name="traceType" id="traceType" lay-filter="departId">
+                        <option th:each="t:${traceInfo}" th:value="${t.key}" th:text="${t.value}"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">跟进结果</label>
+                <div class="layui-input-block" style="width: 72%;">
+                    <select name="traceResult" id="traceResult" lay-filter="departId">
+                        <option value="3">可以</option>
+                        <option value="2">考虑</option>
+                        <option value="1">不行</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">跟进类型</label>
+                <div class="layui-input-block" style="width: 72%;">
+                    <select id="type" lay-filter="traceType">
+                        <option value="0">潜在开发计划</option>
+                        <option value="1">客户跟进历史</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item" >
+                <label class="layui-form-label">跟进内容</label>
+                <div class="layui-input-block" style="width: 72%;">
+                <textarea name="traceDetails" id="traceDetails" placeholder="跟进内容（详细计划）" class="layui-textarea" style="resize:none;"></textarea>
+                </div>
+            </div>
+        </form>
+    </script>
+    <!-- 移交 -->
+    <script type="text/html" id="addWin2">
+        <div class="layui-form-item" style="margin-bottom: 20px;">
+            <label class="layui-form-label">客户姓名</label>
+            <div class="layui-input-block" style="width: 72%;margin-top: 20px;">
+                <input type="text" name="title" id="depName" lay-verify="title" autocomplete="off" placeholder="张三" class="layui-input" disabled>
+            </div>
+        </div>
+        <form class="layui-form" action="#">
+
+            <input type="hidden" name="id" id="depId">
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">旧营销人员</label>
+                <div class="layui-input-block" style="width: 72%;">
+                    <input type="text" name="title" lay-verify="title" id="depCode" autocomplete="off" placeholder="" class="layui-input" disabled="true">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">新营销人员</label>
+                <div class="layui-input-block" style="width: 72%;">
+                    <select id="empId1" lay-filter="departId" lay-search>
+                        <option th:each="t:${employees}" th:value="${t.empId}" th:text="${t.realname}"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">移交原因</label>
+                <div class="layui-input-block" style="width: 72%;">
+                    <textarea  placeholder="请输入内容" id="reason1" class="layui-textarea" style="resize:none;"></textarea>
+                </div>
+            </div>
+        </form>
+    </script>
+    <!-- 修改状态 -->
+    <script type="text/html" id="addWin3">
+        <form class="layui-form" action="#">
+
+            <div class="layui-form-item" style="margin-bottom: 20px;">
+                <label class="layui-form-label">姓名</label>
+                <div class="layui-input-block" style="width: 72%;margin-top: 20px;">
+                    <input type="text" name="name" id="name2" lay-verify="title" autocomplete="off" placeholder="" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">状态</label>
+                <div class="layui-input-block" style="width: 72%;">
+                    <select id="status1" lay-filter="departId" lay-search>
+                        <option value="-2">流失</option>
+                        <option value="-1">开发失败</option>
+                        <option value="0">潜在客户</option>
+                        <option value="1">正式客户</option>
+                        <option value="2">资源池客户</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </script>
+
+
+    <!--状态-->
+    <script id="statusInfo" type="text/html">
+        {{#if(d.status===-2){ }}
+        <button type="button"  class="layui-btn layui-btn-xs layui-btn-normal" >流&#12288;&#12288;&#12288;失</button>
+        {{# } }}
+        {{#if(d.status===-1){ }}
+        <button type="button"  class="layui-btn layui-btn-xs layui-btn-normal" >开发&#12288;失败</button>
+        {{# } }}
+        {{#if(d.status===0){ }}
+        <button type="button"  class="layui-btn layui-btn-xs layui-btn-normal">潜在&#12288;客户</button>
+        {{# } }}
+        {{#if(d.status===1){ }}
+        <button type="button"  class="layui-btn layui-btn-xs layui-btn-normal" >正式&#12288;客户</button>
+        {{# } }}
+        {{#if(d.status===2){ }}
+        <button type="button"  class="layui-btn layui-btn-xs layui-btn-normal" >资源池客户</button>
+        {{# } }}
+    </script>
+</body>
+<script src="static/lay-uis/layui.js"></script>
+<script>
+
+    layui.use(['table','laydate'], function() {
+        var table = layui.table,
+            laydate=layui.laydate,
+            $ = layui.jquery,
+            form = layui.form;
+
+        table.render({
+            elem: '#manager',
+            url:'potential/queryAllByKey.do',
+            toolbar: '#toolbarDemo',
+            id: 'idTest',
+            cellMinWidth: 80,
+            cols: [
+                [{
+                    type: 'numbers',
+                    title: "序号",
+                    width: 80,
+                }, {
+                    field: 'name',
+                    title: "姓名",
+                    width: 80,
+                    
+                }, {
+                    field: 'age',
+                    title: "年龄",
+                    width: 80,
+                    
+                }, {
+                    field: 'gender',
+                    title: "性别",
+                    width: 80,
+                    
+                }, {
+                    field: 'tel',
+                    title: "电话",
+                    width: 180,
+                    
+                }, {
+                    field: 'qq',
+                    title: "QQ",
+                    width: 180,
+                    
+                }, {
+                    field: 'job',
+                    title: "职业",
+                    width: 80,
+                }, {
+                    field: 'source',
+                    title: "来源",
+                    width: 80,
+                }, {
+                    field: 'inputuser',
+                    title: "营销人员",
+                    width: 120,
+                    
+                }, {
+                    field: 'status',
+                    title: "状态",
+                    width: 120,
+                    templet:"#statusInfo",
+                    align:'center'
+                }, {
+                    field: '',
+                    title: '操作',
+                    templet: "#toolDelEdit",
+                }]
+            ],
+            page: true
+        });
+
+        //头工具栏事件
+        table.on('toolbar(manager)', function(obj) {
+            var checkStatus = table.checkStatus(obj.config.id);
+
+            switch (obj.event) {
+                case "addDep":
+                    //添加员工信息
+                    layer.open({
+                        type: 1,
+                        title: "添加单个员工信息",
+                        area: ['600px', '500px'],
+                        shade: 0.4,
+                        content: $("#addWin").html(),
+                        btn: ['确认添加', '取消'],
+                        scrollbar: false,
+                        anim: 3,
+                        closeBtn: false,
+                        success: function(layero, index) {
+                            form.render()
+                        },
+                        yes: function(index, layero) {
+                            $.ajax({
+                                type:'post',
+                                url:'potential/addAndUpdateInfo.do',
+                                data:$("#potentialInfo").serialize(),
+                                dataType:'json',
+                                success:function (data) {
+                                    if (data.code==200){
+                                        layer.msg(data.msg,{icon:1})
+                                        table.reload('idTest',{
+                                            url:'potential/queryAllByKey.do'
+                                        })
+                                    }else {
+                                        layer.msg(data.msg,{icon:2})
+                                    }
+                                },
+                                error:function () {
+                                    layer.msg("系统错误请联系管理员！！！",{icon:2})
+                                }
+                            })
+                            layer.close(index)
+                        }
+                    })
+                    break;
+                case 'selectKey':
+
+                    table.reload('idTest',{
+                        url:'potential/queryAllByKey.do',
+                        where:{
+                            keyword:$("#keyword").val(),
+                            state:$("#statekey").val()
+                        },
+                        page:{
+                            curr:1
+                        }
+                    })
+            };
+        });
+        table.on('tool(manager)', function(obj) {
+            var temp = obj.data;
+            console.log(temp)
+            switch (obj.event) {
+                case "edit":
+                    layer.open({
+                        type: 1,
+                        title: "修改客户信息",
+                        area: ['700px', '500px'],
+                        shade: 0.4,
+                        content: $("#addWin").html(),
+                        btn: ['确认修改', '取消'],
+                        scrollbar: false,
+                        anim: 3,
+                        closeBtn: false,
+                        success: function(layero, index) {
+                            var form1 = layero.find("form")[0];
+                            form1[0].value = temp.pcId
+                            form1[1].value = temp.name
+                            form1[2].value = temp.age
+                            form1[3].value = temp.gender === '男' ? 0 : 1
+                            form1[4].value = temp.tel
+                            form1[5].value = temp.qq
+                            form1[6].value = temp.jobId
+                            form1[7].value = temp.sourceId
+
+                            form.render()
+                            var selectjob = 'dd[lay-value=' + temp.jobId + ']';
+                            var selectjsource = 'dd[lay-value=' + temp.jobId + ']';
+                            var selectgender='dd[lay-value=' + temp.gender + ']';
+                            console.log(selectjsource)
+                            $('#jobId').siblings("div.layui-form-select").find('dl').find(selectjob).click();
+                            $('#sourceId').siblings("div.layui-form-select").find('dl').find(selectjsource).click();
+                            $('#gender').siblings("div.layui-form-select").find('dl').find(selectgender).click();
+                        },
+                        yes: function(index, layero) {
+                            $.ajax({
+                                type:'post',
+                                url:'potential/addAndUpdateInfo.do',
+                                data:$("#potentialInfo").serialize(),
+                                dataType:'json',
+                                success:function (data) {
+                                    if (data.code==200){
+                                        layer.msg(data.msg,{icon:1})
+                                        table.reload('idTest',{
+                                            url:'potential/queryAllByKey.do'
+                                        })
+                                    }else {
+                                        layer.msg(data.msg,{icon:2})
+                                    }
+                                },
+                                error:function () {
+                                    layer.msg("系统错误请联系管理员！！！",{icon:2})
+                                }
+                            })
+                            layer.close(index)
+                        }
+                    })
+                    break;
+                case "run":
+                    layer.open({
+                        type: 1,
+                        title: "跟进记录",
+                        area: ['700px', '530px'],
+                        shade: 0.4,
+                        content: $("#addWin1").html(),
+                        btn: ['确认修改', '取消'],
+                        scrollbar: false,
+                        anim: 3,
+                        closeBtn: false,
+                        success: function(layero, index) {
+                            form.render()
+                            var form1 = layero.find("form")[0];
+                            form1[0].value = temp.pcId
+                            $("#name").val(temp.name)
+
+                            laydate.render({
+                                elem: '#traceTime'
+                                ,format: 'yyyy-MM-dd'
+                                ,trigger:'click'
+                            });
+
+
+                        },
+                        yes: function(index, layero) {
+                            $.ajax({
+                                type:'post',
+                                url:'follow/addFollowHisInfo.do',
+                                data: {
+                                    customerId:$("#pcId").val(),
+                                    traceTime:$("#traceTime").val(),
+                                    traceType:$("#traceType").val(),
+                                    traceResult:$("#traceResult").val(),
+                                    type:$("#type").val(),
+                                    traceDetails:$("#traceDetails").val()
+                                },
+
+                                dataType:'json',
+                                success:function (data) {
+                                    if (data.code==200){
+                                        layer.msg(data.msg,{icon:1})
+                                    }
+                                },
+                                error:function () {
+                                    layer.msg("系统错误请联系管理员！！！",{icon:2})
+                                }
+                            })
+                            layer.close(index)
+                        }
+                    })
+                    break;
+                case "move":
+                    layer.open({
+                        type: 1,
+                        title: "移交记录",
+                        area: ['700px', '500px'],
+                        shade: 0.4,
+                        content: $("#addWin2").html(),
+                        btn: ['确认修改', '取消'],
+                        scrollbar: false,
+                        anim: 3,
+                        closeBtn: false,
+                        success: function(layero, index) {
+                            var form1 = layero.find("form")[0];
+                            console.log(temp)
+                            form1[1].value = temp.name
+                            form1[2].value = temp.seller
+                            form.render()
+                        },
+                        yes: function(index, layero) {
+                            $.ajax({
+                                type:'post',
+                                url:'customerPool/handOverInfo.do',
+                                data:{pcId:temp.pcId,sellerId:temp.sellerId,empId:$("#empId1").val(),reason:$("#reason1").val()},
+                                dataType:'json',
+                                success:function (data) {
+                                    if (data.code==200){
+                                        layer.msg(data.msg,{icon:1})
+                                        table.reload("idTest")
+                                    }
+
+                                },
+                                error:function () {
+                                    layer.msg("系统错误请联系管理员！！！",{icon:2})
+                                }
+                            })
+                            layer.close(index)
+                        }
+                    })
+                    break;
+                case "update":
+                    layer.open({
+                        type: 1,
+                        title: "状态修改",
+                        area: ['600px', '400px'],
+                        shade: 0.4,
+                        content: $("#addWin3").html(),
+                        btn: ['确认修改', '取消'],
+                        scrollbar: false,
+                        anim: 3,
+                        closeBtn: false,
+                        success: function(layero, index) {
+                            var form1 = layero.find("form")[0];
+
+                            form1[0].value = temp.name
+                            form1[1].value = temp.status
+                            form.render()
+                        },
+                        yes: function(index, layero) {
+
+                            $.ajax({
+                                type:'post',
+                                url:'potential/changeState.do',
+                                data:{pcId:temp.pcId,state:$("#status1").val()},
+                                dataType:'json',
+                                success:function (data) {
+                                    if (data.code==200){
+                                        layer.msg(data.msg,{icon:1})
+                                        table.reload('idTest',{
+                                            url:'potential/queryAllByKey.do',
+                                            page:{curr:1}
+                                        })
+                                    }
+                                },
+                                error:function () {
+                                    layer.msg("系统错误请联系管理员！！！",{icon:2})
+                                }
+                            })
+                            layer.close(index)
+                        }
+                    })
+                    break;
+            }
+        })
+    });
+
+
+</script>
+
+</html>

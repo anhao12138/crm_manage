@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin="anonymous" integrity="sha512-cO/G0T0drTsOW6uuK119iEWlPqYRxK1bNYWK80HmJbfiEwwc3L6a8p7Oj0EUWxz7wcCq4tgGwLxqCif0Y7kKMg==" src="https://lib.baomitu.com/echarts/5.1.0/echarts.common.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="static/lay-uis/css/layui.css" media="all">
+</head>
+
+<body>
+
+    <div style="margin: 50px auto 0px auto;text-align: center;width: 250px;font-size: 24px;font-weight: bold;">潜在客户报表-饼状图</div>
+    <p style="text-align: right;margin-right: 25%;"><a th:href="@{/customer.do}"> <button type="button" class="layui-btn layui-btn-warm layui-btn-radius">返回</button></a></p>
+    <div id="main" style="width: 800px;height:500px;margin:50px auto;"></div>
+    <script type="text/javascript">
+
+        window.onload=function (ev) {
+            console.log("ces")
+            $.ajax({
+                type:'get',
+                url:'report/cakeInfo.do',
+                dataType:'json',
+                async:false,
+                success:function (data) {
+                    if (data.code==200){
+                        startCake(data.data)
+                    }
+                }
+            })
+        }
+        $(function () {
+            console.log("测试")
+        })
+        function startCake(data) {
+            var myChart = echarts.init(document.getElementById('main'));
+            myChart.clear();
+            var option = {
+                legend: {
+                    top: 'bottom'
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        mark: {
+                            show: true
+                        },
+                        dataView: {
+                            show: true,
+                            readOnly: false
+                        },
+                        restore: {
+                            show: true
+                        },
+                        saveAsImage: {
+                            show: true
+                        }
+                    }
+                },
+                series: [{
+                    name: '面积模式',
+                    type: 'pie',
+                    radius: [50, 250],
+                    center: ['50%', '50%'],
+                    roseType: 'area',
+                    itemStyle: {
+                        borderRadius: 8
+                    },
+                    data: data
+                }]
+            };
+            myChart.setOption(option, true);
+        }
+
+    </script>
+
+</body>
+
+</html>

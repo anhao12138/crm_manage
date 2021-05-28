@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.w.crmsystem.mapper.DetailDirectoryMapper">
+
+    <!--数据表：detaildirectory-->
+    <sql id="Base_SQL_Field">
+        id,dir_id,det_id
+    </sql>
+
+    <!--新增中间表数据-->
+    <insert id="addDeatilDire">
+        insert into detaildirectory (dir_id,det_id) values (#{dirId},#{detId});
+    </insert>
+    <!--修改正中间表数据 因为是一对一所以可以直接修改-->
+    <update id="updateDetailInfo">
+        update detaildirectory set  dir_id=#{dirId}  where det_id= #{detId};
+    </update>
+
+    <!--根据det_id删除-->
+    <delete id="delDetailById">
+        delete from detaildirectory where det_id=#{detId}
+    </delete>
+
+</mapper>

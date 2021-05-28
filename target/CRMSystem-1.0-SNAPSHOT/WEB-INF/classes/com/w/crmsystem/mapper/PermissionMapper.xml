@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.w.crmsystem.mapper.PermissionMapper" >
+  <resultMap id="BaseResultMap" type="com.w.crmsystem.domain.Permission" >
+    <id column="per_id" property="perId" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="resource" property="resource" jdbcType="VARCHAR" />
+    <result column="lock" property="lock" jdbcType="INTEGER"/>
+    <result column="pid" property="pid" jdbcType="INTEGER"/>
+
+  </resultMap>
+  <sql id="Base_Column_List" >
+    per_id, name, resource,lock,pid
+  </sql>
+  <select id="findById" resultMap="BaseResultMap">
+    select per_id,name,resource,pid,`lock` from permission where per_id=#{permissionId}
+  </select>
+
+
+  <!--查询所有权限 分页-->
+  <select id="queryList" resultMap="BaseResultMap">
+    select * from permission limit #{offset},#{limit}
+  </select>
+
+  <!--更改权限状态-->
+  <update id="changeLock">
+    update permission set  `lock`=#{statu}  where per_id=#{perId};
+  </update>
+
+  <!--查询所有权限不分页-->
+  <select id="queryAll" resultMap="BaseResultMap">
+    select * from permission;
+  </select>
+</mapper>

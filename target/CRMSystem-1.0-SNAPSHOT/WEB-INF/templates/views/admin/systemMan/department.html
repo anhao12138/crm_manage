@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>图书馆理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="static/lay-uis/css/layui.css" media="all">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <table class="layui-hide" id="department" lay-filter="department"></table>
+
+    <script type="text/html" id="toolbarDemo">
+        <div class="layui-btn-container">
+          <button class="layui-btn layui-btn-sm" lay-event="addDep">添加部门</button>
+        </div>
+    </script>
+    <script type="text/html" id="toolDelEdit">
+        <div class="layui-btn-container">
+          <button class="layui-btn layui-btn-xs" lay-event="edit" >编辑</button>
+          <button class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</button>
+        </div>
+    </script>
+    <script type="text/html" id="addWin">
+        <form class="layui-form" action="/addAndUpadteInfoDep.do" method="post">
+            <input type="hidden" name="deptId" id="depId">
+            <div class="layui-form-item" style="margin-bottom: 20px;">
+                <label class="layui-form-label">部门名称</label>
+                <div class="layui-input-block">
+
+                    <input  type="text" name="sn" id="depName" lay-verify="title" autocomplete="off" placeholder="请输入部门名称" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">部门编号</label>
+                <div class="layui-input-block">
+                    <input  type="text" name="name" lay-verify="title" id="depCode" autocomplete="off" placeholder="请输入部门编号" class="layui-input">
+                </div>
+            </div>
+
+        </form>
+    </script>
+
+</body>
+<script src="static/lay-uis/layui.js"></script>
+<script>
+    layui.use('table', function () {
+        var table = layui.table
+            , form = layui.form;
+
+        table.render({
+            elem: '#department'
+            , url:'/queryList.do'
+            , toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
+            , id: 'idTest'
+            , cellMinWidth: 80
+            , cols: [
+                [
+                { type: 'numbers', title: "序号", width: 80 }
+                , { field: 'sn', title: '部门名称', templet: '#usernameTpl', width: 310 }
+                , { field: 'name', title: '部门编号' }
+                , { field: 'deptId', title: '操作', width: 180, templet: '#checkboxTpl', align: 'center', templet:"#toolDelEdit" }
+            ]
+            ]
+            , page: true
+        });
+
+        //头工具栏事件
+        table.on('toolbar(department)', function (obj) {
+            var checkStatus = table.checkStatus(obj.config.id);
+            switch (obj.event) {
+                //添加权限
+                case 'addDep':
+                    layer.open({
+                        type: 0,
+                        title: '添加部门信息',   //标题
+                        area: ['420px', '300px'],   //宽高
+                        shade: 0.4,   //遮罩透明度
+                        content: $("#addWin").html(),//支持获取DOM元素
+                        btn: ['确定', '取消'], //按钮组
+                        scrollbar: false,//屏蔽浏览器滚动条
+                        anim: 2,
+                        yes: function (index, layero) {//layer.msg('yes');    //点击确定回调
+                            layero.find("form")[0].submit();
+                            layer.close(index);
+
+                        },
+                        btn2: function () {//layer.alert('aaa',{title:'msg title'});  点击取消回调
+                            layer.closeAll();
+                        }
+                    });
+                    break;
+            };
+        });
+        table.on('tool(department)',function(obj){
+            var data=obj.data
+            console.log(data)
+            switch(obj.event){
+                case "edit":
+                    layer.open({
+                        type:0,
+                        title:"修改部门信息",
+                        area:['420px','300px'],
+                        shade:0.5,
+                        content:$("#addWin").html(),
+                        btn:['确认修改','修改'],
+                        scrollbar:false,
+                        anim:3,
+                        // 不仔细看文档导致前后顺序出问题，应该是先有dom层，再设置的索引，和yes及其他按钮相反
+                        success:function(layero,index){
+                            var form=layero.find("form")[0]
+                            form[0].value=data.deptId
+                            form[1].value=data.sn
+                            form[2].value=data.name
+                        },
+                        yes:function(index,layero){
+                            console.log("确认更新")
+                            console.log(layero.find("form")[0])
+                            layero.find("form")[0].submit();
+                            layer.close(index);
+                        }
+
+                    });
+                    break;
+                case 'del':
+                    console.log(data.deptId)
+                    layer.confirm('您确定要删除该条信息吗?',{btn: ['确定', '取消'],title:"警告"}, function(){
+                        $.ajax({
+                            type: "post",
+                            url: "/delInfoDep.do",
+                            data: {deptId:data.deptId},
+                            dataType: "json",
+                            async:false,
+                            success:function(data) {
+                                if(data.code == 200){
+                                    layer.msg('删除成功', {icon: 1});
+                                    table.reload('idTest', {
+                                        url: '/queryList.do'
+                                        ,where: {} //设定异步数据接口的额外参数
+                                    });
+                                }else{
+                                    layer.msg('删除失败', {icon: 2});
+                                }
+                            }
+                        });
+                    });
+            }
+        })
+    });
+</script>
+
+</html>

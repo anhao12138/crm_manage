@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.w.crmsystem.mapper.SystemdictionaryMapper" >
+  <resultMap id="BaseResultMap" type="com.w.crmsystem.domain.Systemdictionary" >
+    <id column="sd_id" property="sdId" jdbcType="INTEGER" />
+    <result column="sn" property="sn" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="intro" property="intro" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    sd_id, sn, name, intro
+  </sql>
+
+</mapper>

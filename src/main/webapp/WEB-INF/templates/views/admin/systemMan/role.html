@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>图书馆理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="static/lay-uis/css/layui.css" media="all">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+<table class="layui-hide" id="role" lay-filter="role"></table>
+<input type="hidden" id="transferData" th:value="${permissions}">
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" lay-event="addDep">添加角色</button>
+    </div>
+</script>
+<script type="text/html" id="toolDelEdit">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-xs" lay-event="edit">编辑</button>
+        <button class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</button>
+    </div>
+</script>
+<!-- 添加、编辑权限 -->
+<script type="text/html" id="addWin">
+    <form class="layui-form" action="#">
+        <input type="hidden" name="roleId" id="roleId">
+        <div class="layui-form-item" style="margin-bottom: 20px;">
+            <label class="layui-form-label">角色名称</label>
+            <div class="layui-input-block">
+
+                <input type="text" name="sn" id="sn" lay-verify="title" autocomplete="off" placeholder="请输入角色名称"
+                       class="layui-input" required>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">角色编号</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" id="name" lay-verify="title" autocomplete="off" placeholder="请输入角色编号"
+                       class="layui-input" required>
+            </div>
+        </div>
+
+    </form>
+    <div id="test1" class="demo-transfer"></div>
+</script>
+
+<!--权限盒子-->
+<script id="perBox" type="text/html">
+    {{d.name}}     .......
+    <button style="float: right" class="layui-btn layui-btn-xs layui-btn-normal" lay-event="lookInfo">查看详情</button>
+</script>
+
+<!--权限展示-->
+<script id="perShow" type="text/html">
+    <table class="layui-hide" id="permission" lay-filter="permission"></table>
+</script>
+
+
+</body>
+<script src="static/lay-uis/layui.js"></script>
+<script>
+    layui.use(['table', 'transfer', 'layer', 'util', 'form'], function () {
+        var table = layui.table
+            , form = layui.form
+            , transfer = layui.transfer
+            , layer = layui.layer
+            , util = layui.util;
+
+
+        //角色表格初始化渲染
+        table.render({
+            elem: '#role'
+            , url: 'queryAllRole.do'
+            , toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
+            , id: 'idTest'
+            , cellMinWidth: 80
+            , cols: [
+                [
+                    {type: 'numbers', title: "序号", width: 80,align: 'center'}
+                    , {field: 'sn', title: '角色名称', templet: '#usernameTpl', width: 310,align: 'center'}
+                    , {field: 'name', title: '角色编号',align: 'center'}
+                    , {field: 'name', title: '已有权限', templet: '#perBox',align: 'center'}
+                    , {field: '',title: '操作',width: 180,templet: '#checkboxTpl',align: 'center',templet: "#toolDelEdit"}
+                ]
+            ]
+            , page: true
+        });
+
+        //头工具栏事件
+        table.on('toolbar(role)', function (obj) {
+            var checkStatus = table.checkStatus(obj.config.id);
+            switch (obj.event) {
+                //添加权限
+                case 'addDep':
+                    layer.open({
+                        type: 0,
+                        title: '添加部门信息',   //标题
+                        area: ['620px', '500px'],   //宽高
+                        shade: 0.4,   //遮罩透明度
+                        content: $("#addWin").html(),//支持获取DOM元素
+                        btn: ['确定', '取消'], //按钮组
+                        scrollbar: false,//屏蔽浏览器滚动条
+                        anim: 2,
+                        success: function (layero, index) {
+
+                            //基础效果
+                            transfer.render({
+                                elem: '#test1'
+                                , id: 'permi'
+                                , data: JSON.parse($("#transferData").val())
+                                , parseData: function (res) {
+                                    return {
+                                        "value": res.perId //数据值
+                                        , "title": res.name //数据标题
+                                    }
+                                }
+                                , title: ['所有权限', '已有权限']
+                                , height: 250
+
+                            })
+                        },
+                        yes: function (index, layero) {//layer.msg('yes');    //点击确定回调
+                            var form1 = layero.find("form")[0];
+                            var sn = form1[1].value
+                            var name = form1[2].value
+                            var pers = transfer.getData('permi')
+                            var permissionId = ''
+                            for (var i = 0; i < pers.length; i++) {
+                                permissionId += pers[i].value
+                                if (i != pers.length - 1) {
+                                    permissionId += ","
+                                }
+                            }
+                            console.log(permissionId)
+                            $.ajax({
+                                type: 'post',
+                                url: 'addRoleInfo.do',
+                                data: {sn: sn, name: name, perIds: permissionId},
+                                dataType: 'json',
+                                async: false,
+                                success: function (data) {
+                                    if (data.code == 200) {
+                                        layer.msg(data.msg, {icon: 1})
+                                        table.reload("idTest")
+                                    } else {
+                                        layer.msg(data.msg, {icon: 2})
+                                    }
+                                },
+                                error: function () {
+                                    layer.msg("系统错误！请联系管理员！", {icon: 2})
+                                }
+                            })
+                            console.log(transfer.getData('permi'))
+                            //通过ajax传输数据
+                            layer.close(index);
+
+                        },
+                        btn2: function () {//layer.alert('aaa',{title:'msg title'});  点击取消回调
+                            layer.closeAll();
+                        }
+                    });
+                    break;
+            };
+        });
+
+
+        table.on('tool(role)', function (obj) {
+            var temp = obj.data
+            switch (obj.event) {
+
+                case "edit":
+                    layer.open({
+                        type: 0,
+                        title: "修改角色信息",
+                        area: ['620px', '500px'],
+                        shade: 0.5,
+                        content: $("#addWin").html(),
+                        btn: ['确认修改', '取消'],
+                        anim: 3,
+                        // 不仔细看文档导致前后顺序出问题，应该是先有dom层，再设置的索引，和yes及其他按钮相反
+                        success: function (layero, index) {
+                            var form = layero.find("form")[0]
+                            form[0].value = temp.roleId
+                            form[1].value = temp.sn
+                            form[2].value = temp.name
+                            var pers=temp.permissions.data
+                            var arr=[]
+                            for (var i=0;i<pers.length;i++){
+                                arr[i]=pers[i].perId
+                            }
+                            console.log(arr)
+                            //基础效果
+                            transfer.render({
+                                elem: '#test1'
+                                , data: JSON.parse($("#transferData").val())
+                                , id:'permi'
+                                , parseData: function (res) {
+                                    return {
+                                        "value": res.perId //数据值
+                                        , "title": res.name //数据标题
+
+                                    }
+                                }
+                                ,value:arr
+                                , title: ['所有权限', '已有权限']
+                                , height: 250
+
+                            })
+                        },
+                        yes: function (index, layero) {
+                            //点击确认修改，主要是完成角色名称和角色编号的修改
+
+                            var pers = transfer.getData('permi')
+                            var permissionId = ''
+                            for (var i = 0; i < pers.length; i++) {
+                                permissionId += pers[i].value
+                                if (i != pers.length - 1) {
+                                    permissionId += ","
+                                }
+                            }
+                            var role={
+                                "roleId":$("#roleId").val(),
+                                "sn":$("#sn").val(),
+                                "name":$("#name").val()
+                            }
+                            $.ajax({
+                                type:"post",
+                                url:'updateRole.do',
+                                data:{
+                                    roleId:role.roleId,
+                                    sn:role.sn,
+                                    name:role.name,
+                                    perIds:permissionId
+                                },
+                                dataType: 'json',
+                                async: false,
+                                success: function (data) {
+                                    if (data.code == 200) {
+                                        layer.msg(data.msg, {icon: 1})
+                                        table.reload('idTest')
+                                    } else {
+                                        layer.msg(data.msg, {icon: 2})
+                                    }
+                                },
+                                error: function (data) {
+                                    layer.msg("删除失败，请联系管理员", {icon: 2})
+                                }
+                            })
+                        }
+
+                    })
+                    break;
+                case 'del':
+                    layer.confirm("你确定要删除" + temp.name + "角色么？删除后可能导致部分功能无法使用！！！", function (index) {
+                        $.ajax({
+                            type: 'post',
+                            url: 'delRoleById.do',
+                            data: {roleId: temp.roleId},
+                            dataType: 'json',
+                            async: false,
+                            success: function (data) {
+                                if (data.code == 200) {
+                                    layer.msg(data.msg, {icon: 1})
+                                    table.reload('idTest')
+                                } else {
+                                    layer.msg(data.msg, {icon: 2})
+                                }
+                            },
+                            error: function (data) {
+                                layer.msg("删除失败，请联系管理员", {icon: 2})
+                            }
+                        })
+                    })
+                    break;
+
+                case 'lookInfo':
+
+                    layer.open({
+                        type: 1,
+                        title: "角色权限查看",
+                        area: ['620px', '500px'],
+                        shade: 0.5,
+                        content: '<div><table id="templateTable"></table></div>',
+                        btn: [ '取消'],
+                        anim: 3,
+                        // 不仔细看文档导致前后顺序出问题，应该是先有dom层，再设置的索引，和yes及其他按钮相反
+                        success: function (layero, index) {
+                            console.log(temp.permissions)
+                            var perTemp=temp.permissions
+                            //权限详细信息渲染
+                            table.render({
+                                elem: '#templateTable'
+                                , data:perTemp.data
+                                , cellMinWidth: 80
+                                , cols: [
+                                    [
+                                        { type: 'numbers', title: "序号", width: 80 }
+                                        , { field: 'name', title: '权限名'}
+                                        , { field: 'resource', title: '权限资源' }
+                                    ]
+                                ]
+
+                            });
+
+                        },
+                    })
+                    break;
+
+            }
+        })
+    });
+
+</script>
+<style>
+    .demo-transfer {
+        margin-left: 47px
+
+    }
+
+    .layui-transfer-box {
+        overflow-y: auto;
+        margin-left: 20px;
+    }
+</style>
+
+</html>

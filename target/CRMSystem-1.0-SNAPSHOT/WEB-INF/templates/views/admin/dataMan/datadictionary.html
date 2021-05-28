@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>数据字典管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="static/lay-uis/css/layui.css" media="all">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <table class="layui-hide" id="datadictionary" lay-filter="datadictionary"></table>
+
+    <!-- 头部工具栏模板 -->
+    <script type="text/html" id="toolbarDemo">
+        <form class="layui-form" style="float: left;">
+            <div class="layui-input-inline">
+                <div class="layui-input-inline">
+                    <input  type="text" id="keyword" lay-verify="title" autocomplete="off" placeholder="请输入数据字典名称" class="layui-input">
+                </div>
+            </div>
+        </form>
+        <div style="float: left;padding-left: 20px;padding-top: 1px;">
+            <button class="layui-btn layui-btn-sm" lay-event="selectEm">模糊查询</button>
+            <button class="layui-btn layui-btn-sm" lay-event="addEm">添加数据字典</button>
+        </div>
+    </script>
+    <!-- 按钮模板 -->
+    <script type="text/html" id="toolDelEdit">
+        <div class="layui-btn-container">
+          <button class="layui-btn layui-btn-xs" lay-event="edit">修改</button>
+          <button class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</button>
+        </div>
+    </script>
+    <!-- 添加/修改数据信息模板 -->
+    <script type="text/html" id="addWin">
+        <form class="layui-form" action="#" id="saveAndUp">
+            <input type="hidden" name="dicdirId" id="dicdirId">
+
+            <div class="layui-form-item" style="margin-bottom: 20px;">
+                <label class="layui-form-label">名称</label>
+                <div class="layui-input-block" style="width: 72%;margin-top: 20px;">
+                    <input  type="text" name="title" id="title" lay-verify="title" autocomplete="off" placeholder="请输入名称" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">编号</label>
+                <div class="layui-input-block" style="width: 72%;">
+                    <input  type="text" name="sn" lay-verify="sn" id="sn" autocomplete="off" placeholder="请输入编号" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">简介</label>
+                <div class="layui-input-block" style="width: 72%;">
+                    <input  type="text" name="intro" lay-verify="intro" id="intro" autocomplete="off" placeholder="请输入简介" class="layui-input">
+                </div>
+            </div>
+        </form>
+    </script>
+   
+   
+
+</body>
+<script src="static/lay-uis/layui.js"></script>
+<script>
+    layui.use(['form', 'upload', 'element', 'layer', 'table'], function () {
+        var form = layui.form,
+            table = layui.table
+            , $ = layui.jquery
+            , upload = layui.upload
+            , element = layui.element
+            , layer = layui.layer;
+
+        table.render({
+            elem: '#datadictionary',
+            url:'queryDataDicInfo.do',
+            toolbar: "#toolbarDemo",
+            id: "idTest",
+            cellMinWidth: 80,
+            defaultToolbar: ['exports', 'print'],
+            title: "员工信息表",
+            cols: [
+                [
+                { type: 'numbers', title: '序号', width: 80 },
+                { field: 'title', title: "名称" },
+                { field: 'sn', title: "编码" },
+                { field: 'intro', title: "简介"},
+                { field: '', title: "操作", width: 160, templet: "#toolDelEdit" }
+            ]
+            ],
+            page: true
+        })
+        
+        table.on('toolbar(datadictionary)', function (obj) {
+            switch (obj.event) {
+                case "selectEm":
+                    //查询数据信息
+
+                    //表格重载
+                    table.reload('idTest',{
+                        where:{key:$("#keyword").val()},
+                        page: {
+                            curr: 1 //重新从第 1 页开始
+                        }
+                    })
+                    break;
+                case "addEm":
+                    //添加信息
+                    layer.open({
+                        type: 1,
+                        title: "添加单条数据信息",
+                        area: ['600px', '400px'],
+                        shade: 0.4,
+                        content: $("#addWin").html(),
+                        btn: ['确认添加', '取消'],
+                        scrollbar: false,
+                        anim: 3,
+                        closeBtn: false,
+                        success: function (layero, index) {
+                            form.render()
+                        },
+                        yes: function (index, layero) {
+                            console.log("确认添加")
+                            console.log(layero.find("form")[0])
+                            $.ajax({
+                                type:"post",
+                                url:"addAndUpdate.do",
+                                data:$("#saveAndUp").serialize(),
+                                dataType:"json",
+                                async:false,
+                                success:function (data) {
+                                    if (data.code==200){
+                                        layer.msg(data.msg,{icon:1})
+                                        table.reload("idTest")
+                                    }else {
+                                        layer.msg(data.msg,{icon:2})
+                                    }
+
+                                },
+                                error:function () {
+                                    layer.msg("系统错误请联系管理员！",{icon:2})
+                                }
+                            })
+                            layer.close(index)
+                        }
+                    })
+                    break;
+            }
+        })
+
+        table.on('tool(datadictionary)', function (obj) {
+            var data = obj.data;
+            console.log(data)
+            switch (obj.event) {
+                case "edit":
+                    //修改单个信息
+                    layer.open({
+                       
+                        type: 1,
+                        title: "修改单条数据信息",
+                        area: ['600px', '400px'],
+                        shade: 0.4,
+                        content: $("#addWin").html(),
+                        btn: ['确认修改', '取消'],
+                        scrollbar: false,
+                        anim: 3,
+                        closeBtn: false,
+                        success: function (layero, index) {
+                            form.render()
+                            
+                            var form1=layero.find("form")[0];
+                            console.log(form1[0])
+                            form1[0].value=data.dicdirId
+                            form1[1].value=data.title
+                            form1[2].value=data.sn
+                            form1[3].value=data.intro
+                        },
+                        yes: function (index, layero) {
+                            console.log("确认修改")
+                            console.log(layero.find("form")[0])
+                            $("#saveAndUp").serialize();
+                            $.ajax({
+                                type:"post",
+                                url:'update.do',
+                                data:$("#saveAndUp").serialize(),
+                                dataType:'json',
+                                async:false,
+                                success:function (data) {
+                                    if (data.code==200){
+                                        layer.msg(data.msg,{icon:1})
+                                        table.reload("idTest")
+                                    }else {
+                                        layer.msg(data.msg,{icon:2})
+                                    }
+
+                                },
+                                error:function () {
+                                    layer.msg("系统错误请联系管理员！",{icon:2})
+                                }
+                            })
+                            layer.close(index)
+                        }
+                    })
+                    break;
+                case 'del':
+                    //删除单个信息
+                    layer.confirm("你真的要删除"+data.title+"这条数据嘛?", function (index) {
+                        $.ajax({
+                            type:"post",
+                            url:"delById.do",
+                            data:{dataId:data.dicdirId},
+                            dataType:"json",
+                            async:false,
+                            success:function (data) {
+                                if (data.code==200){
+                                    layer.msg(data.msg,{icon:1})
+                                    table.reload("idTest")
+                                }else {
+                                    layer.msg(data.msg,{icon:2})
+                                }
+                            },
+                            error:function () {
+                                layer.msg("系统错误请联系管理员！",{icon:2})
+                            }
+                        })
+                        table.reload("idTest")
+                        layer.close(index);
+                    });
+
+                    break;
+            }
+        })
+
+    });
+
+
+</script>
+<style>
+    .layui-table-tool {
+        min-height: 70px
+    }
+
+    .layui-table-tool button {
+        height: 35px;
+        font-size: 13px;
+
+    }
+
+    .layui-upload-drag {
+        width: 82.5%;
+    }
+</style>
+
+</html>

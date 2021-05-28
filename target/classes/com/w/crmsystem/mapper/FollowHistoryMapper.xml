@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.w.crmsystem.mapper.FollowHistoryMapper">
+    <resultMap id="BaseResultMap" type="com.w.crmsystem.domain.FollowHistory">
+        <id column="follow_id" property="followId"/>
+        <result column="traceTime" property="traceTime"/>
+        <result column="traceDetails" property="traceDetails"/>
+        <result column="traceType" property="traceType"/>
+        <result column="traceResult" property="traceResult"/>
+        <result column="customer_id" property="customerId"/>
+        <result column="inputUser" property="inputUser"/>
+        <result column="type" property="type"/>
+    </resultMap>
+
+    <resultMap id="BaseResultMap1" type="com.w.crmsystem.domain.FollowHistoryExample">
+        <result column="traceTime" property="traceTime"/>
+        <result column="traceDetails" property="traceDetails"/>
+        <result column="traceType" property="traceType"/>
+        <result column="traceResult" property="traceResult"/>
+        <result column="name" property="name"/>
+        <result column="inputUser" property="inputUser"/>
+        <result column="type" property="type"/>
+        <result column="realName" property="realName"/>
+    </resultMap>
+    <!--数据库表：followhistory-->
+    <sql id="Base_SQL_Field">
+        follow_id,traceTime,traceDetails,traceType,traceResult,customer_id,inputUser,`type`
+    </sql>
+
+    <!--添加跟进记录-->
+    <insert id="addFollowHisInfo" parameterType="FollowHistory">
+        insert into followhistory (traceTime,traceDetails,traceType,traceResult,customer_id,inputUser,`type`) values (#{traceTime},#{traceDetails},#{traceType},#{traceResult},#{customerId},#{inputUser},#{type});
+    </insert>
+
+    <!--普通分页查询-->
+    <select id="queryAll" resultMap="BaseResultMap1">
+        select f.inputUser,f.traceDetails,f.traceResult,f.traceTime,f.traceType,f.type,p.`name` from followhistory f INNER JOIN potentialcustomer p on f.customer_id=p.pc_id  limit #{offset},#{limit}
+    </select>
+
+    <!--普通查询总数-->
+    <select id="countAll" resultType="int">
+        select count(*) from followhistory f INNER JOIN potentialcustomer p on f.customer_id=p.pc_id
+     </select>
+
+    <!--条件分页查询-->
+    <select id="queryByKey" resultMap="BaseResultMap1">
+        select f.inputUser,f.traceDetails,f.traceResult,f.traceTime,f.traceType,f.type,p.`name` from followhistory f INNER JOIN potentialcustomer p on f.customer_id=p.pc_id
+        <trim prefix="where" suffixOverrides="and">
+            <if test="keyword!=null  and keyword!=''">
+                (name like concat('%',#{keyword},'%')) and
+            </if>
+            <if test="startTime!=null  and startTime!=''">
+                traceTime>=#{startTime} and
+            </if>
+            <if test="endTime!=null  and endTime!=''">
+                traceTime&lt;=#{endTime} and
+            </if>
+            <if test="resultId!=null">
+                type=#{resultId} and
+            </if>
+        </trim>
+        limit #{offset},#{limit}
+    </select>
+
+    <!--条件查询总数-->
+    <select id="countByKey" resultType="int">
+        select count(*) from followhistory f INNER JOIN potentialcustomer p on f.customer_id=p.pc_id
+        <trim prefix="where" suffixOverrides="and">
+            <if test="keyword!=null  and keyword!=''">
+                name like concat('%',#{keyword},'%') and
+            </if>
+            <if test="startTime!=null  and startTime!=''">
+                traceTime>=#{startTime} and
+            </if>
+            <if test="endTime!=null  and endTime!=''">
+                traceTime&lt;=#{endTime} and
+            </if>
+            <if test="resultId!=null">
+                type=#{resultId} and
+            </if>
+        </trim>
+    </select>
+</mapper>

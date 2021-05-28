@@ -1,0 +1,75 @@
+{
+  "homeInfo": {
+    "title": "首页",
+    "href": ""
+  },
+  "logoInfo": {
+    "title": "KNAVE CRM SYSTEM",
+    "image": "static/layuimini/images/logo.png",
+    "href": ""
+  },
+  "menuInfo": [
+    {
+      "title": "CRM系统管理",
+      "icon": "fa fa-address-book",
+      "target": "_self",
+      "child": [
+        {
+          "title": "系统管理",
+          "icon": "fa fa-home",
+          "target": "_self",
+          "child": [
+            {
+              "title": "部门管理",
+              "icon": "fa fa-tachometer",
+              "href": "department.do",
+              "target": "_self"
+            },
+            {
+              "title": "角色管理",
+              "icon": "fa fa-tachometer",
+              "href": "role.do",
+              "target": "_self"
+            },
+            {
+              "title": "部门管理",
+              "icon": "fa fa-tachometer",
+              "href": "department.do",
+              "target": "_self"
+            },
+            {
+              "title": "权限管理",
+              "icon": "fa fa-tachometer",
+              "href": "permission.do",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "数据管理",
+          "icon": "fa fa-window-maximize",
+          "target": "_self",
+          "child": []
+        },
+        {
+          "title": "客户管理",
+          "icon": "fa fa-window-maximize",
+          "target": "_self",
+          "child": []
+        },
+        {
+          "title": "客户历史",
+          "icon": "fa fa-window-maximize",
+          "target": "_self",
+          "child": []
+        },
+        {
+          "title": "报表统计",
+          "icon": "fa fa-window-maximize",
+          "target": "_self",
+          "child": []
+        }
+      ]
+    }
+  ]
+}

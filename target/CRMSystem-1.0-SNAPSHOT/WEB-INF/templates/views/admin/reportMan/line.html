@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script crossorigin="anonymous" integrity="sha512-cO/G0T0drTsOW6uuK119iEWlPqYRxK1bNYWK80HmJbfiEwwc3L6a8p7Oj0EUWxz7wcCq4tgGwLxqCif0Y7kKMg==" src="https://lib.baomitu.com/echarts/5.1.0/echarts.common.js"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="static/lay-uis/css/layui.css" media="all">
+</head>
+
+<body>
+
+<div style="margin: 50px auto 0px auto;text-align: center;width: 250px;font-size: 24px;font-weight: bold;">潜在客户报表-饼状图</div>
+<div id="main" style="width: 800px;height:500px;margin:0 auto;"></div>
+<script type="text/javascript">
+
+
+	window.onload=function (ev) {
+		console.log("ces")
+		$.ajax({
+			type:'get',
+			url:'report/cakeInfo.do',
+			dataType:'json',
+			async:false,
+			success:function (data) {
+				if (data.code==200){
+					startCake(data.data)
+				}
+			}
+		})
+	}
+	$(function () {
+		console.log("测试")
+	})
+
+	function startCake(data) {
+		var myChart = echarts.init(document.getElementById('main'));
+		// myChart.showLoading();
+
+		myChart.clear();
+		var option = {
+			tooltip: {
+				trigger: 'item'
+			},
+			legend: {
+				top: '5%',
+				left: 'center'
+			},
+			series: [
+				{
+					name: '访问来源',
+					type: 'pie',
+					radius: ['40%', '70%'],
+					avoidLabelOverlap: false,
+					itemStyle: {
+						borderRadius: 10,
+						borderColor: '#fff',
+						borderWidth: 2
+					},
+					label: {
+						show: false,
+						position: 'center'
+					},
+					emphasis: {
+						label: {
+							show: true,
+							fontSize: '40',
+							fontWeight: 'bold'
+						}
+					},
+					labelLine: {
+						show: false
+					},
+					data: data
+				}]
+		};
+		myChart.setOption(option, true);
+	}
+
+</script>
+
+</body>
+
+</html>

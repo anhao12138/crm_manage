@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.w.crmsystem.mapper.DepartmentMapper" >
+  <resultMap id="BaseResultMap" type="com.w.crmsystem.domain.Department" >
+    <id column="dept_id" property="deptId" jdbcType="INTEGER" />
+    <result column="sn" property="sn" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="manager" property="manager" jdbcType="VARCHAR" />
+    <result column="parent" property="parent" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    dept_id, sn, name, manager, parent, state
+  </sql>
+
+  <select id="queryAllInfoDep" resultMap="BaseResultMap">
+    select * from department;
+  </select>
+  <!--添加信息-->
+  <insert id="insertDep" parameterType="Department">
+    insert into department (sn, name, manager, parent, state) values ( #{sn}, #{name}, #{manager}, #{parent}, #{state});
+  </insert>
+
+  <!--分页查询-->
+  <select id="queryByLimit" resultMap="BaseResultMap">
+    select * from department limit #{offset},#{limit};
+  </select>
+
+  <!--更新操作-->
+  <update id="updateDep" parameterType="Department">
+    update department
+      <set>
+        <if test="sn!=null and sn!=''">
+          sn=#{sn},
+        </if>
+        <if test="name!=null and name!=''">
+          name=#{name},
+        </if>
+        <if test="manager!=null and manager!=''">
+          manager=#{manager},
+        </if>
+        <if test="parent!=null and parent!=''">
+          parent=#{parent},
+        </if>
+        <if test="state!=null">
+          state=#{state}
+        </if>
+      </set>
+      where dept_id=#{deptId};
+  </update>
+
+  <!--删除单条-->
+  <delete id="delById">
+    delete from department where dept_id=#{deptId}
+  </delete>
+</mapper>

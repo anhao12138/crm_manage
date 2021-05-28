@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.w.crmsystem.mapper.DataDictionaryMapper">
+
+    <!--表名：datadictionary-->
+    <resultMap id="BaseResultMap" type="com.w.crmsystem.domain.DataDictionary">
+        <id column="dicdir_id" property="dicdirId"/>
+        <result column="sn" property="sn"/>
+        <result column="title" property="title"/>
+        <result column="intro" property="intro"/>
+    </resultMap>
+
+    <sql id="Base_SQL_Field">
+        dicdir_id,sn,title,intro
+    </sql>
+
+    <!--查询所有数据-->
+    <select id="queryAll" resultMap="BaseResultMap">
+        select * from datadictionary;
+    </select>
+    <!--普通分页查询-->
+    <select id="queryDataDicInfo" resultMap="BaseResultMap">
+        select * from datadictionary limit #{offset},#{limit}
+    </select>
+
+    <!--带关键字的分页查询-->
+    <select id="queryByKeyLimit" resultMap="BaseResultMap">
+        select * from datadictionary where title like concat("%",#{key},"%") limit #{offset},#{limit}
+    </select>
+
+    <!--普通查询总数-->
+    <select id="countAll" resultType="int">
+        select count(*) from datadictionary
+    </select>
+
+    <!--带关键字的查询总数-->
+    <select id="countByKey" resultType="int">
+        select count(*) from datadictionary where title like concat("%",#{key},"%")
+    </select>
+
+    <!--使用ID删除字典-->
+    <delete id="delById">
+        delete from datadictionary where dicdir_id=#{dataId}
+    </delete>
+
+    <!--添加数据字典信息-->
+    <insert id="addDataDicInfo" parameterType="DataDictionary">
+        insert into datadictionary (sn,title,intro) value (#{sn},#{title},#{intro});
+    </insert>
+
+    <!--修改数据字典信息-->
+    <update id="updateDataDicInfo">
+        update datadictionary
+         <set>
+             <if test="sn!=null and sn!=''">
+                 sn=#{sn},
+             </if>
+             <if test="title!=null and title!=''">
+                 title=#{title},
+             </if>
+             <if test="intro!=null and intro!=''">
+                 intro=#{intro}
+             </if>
+         </set>
+         where dicdir_id=#{dicdirId};
+    </update>
+</mapper>

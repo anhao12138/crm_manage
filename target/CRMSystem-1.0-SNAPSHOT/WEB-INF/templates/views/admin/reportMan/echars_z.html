@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin="anonymous" integrity="sha512-cO/G0T0drTsOW6uuK119iEWlPqYRxK1bNYWK80HmJbfiEwwc3L6a8p7Oj0EUWxz7wcCq4tgGwLxqCif0Y7kKMg==" src="https://lib.baomitu.com/echarts/5.1.0/echarts.common.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="static/lay-uis/css/layui.css" media="all">
+</head>
+
+<body>
+    <form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+        <div class="layui-form-item" style="margin-left: 20%;margin-top: 20px">
+
+            <div class="layui-input-inline">
+                <input type="text" id="username" placeholder="请输入待查找员工工号" autocomplete="off" class="layui-input">
+            </div>
+            <button type="button" class="layui-btn layui-btn-normal" onclick="selectSingle()">查看</button>
+            <p style="text-align: right;margin-right: 25%;float:right;"><a th:href="@{/customer.do}"> <button type="button" class="layui-btn layui-btn-warm layui-btn-radius" >返回</button></a></p>
+        </div>
+    </form>
+    <div style="margin: 50px auto 0px auto;text-align: center;width: 250px;font-size: 24px;font-weight: bold;">潜在客户报表-柱状图</div>
+    
+    <div id="main" style="width: 1000px;height:600px;margin: auto;"></div>
+
+    <script type="text/javascript">
+        function selectSingle(){
+            console.log("点击")
+            $.ajax({
+                type:'get',
+                url:'report/columnInfo.do',
+                data:{username:$("#username").val()},
+                dataType:'json',
+                async:false,
+                success:function (data) {
+                    if (data.code==200){
+                        var xydata=processingData(data.data.data);
+                        console.log(xydata[0])
+                        console.log(xydata[1])
+                        showColumn(xydata[0],xydata[1],data.data.realName)
+                    }
+                }
+            })
+        }
+        $(function () {
+            $.ajax({
+                type:'get',
+                url:'report/columnInfo.do',
+                dataType:'json',
+                async:false,
+                success:function (data) {
+                    if (data.code==200){
+                        var xydata=processingData(data.data.data);
+                        console.log(xydata[0])
+                        console.log(xydata[1])
+                        showColumn(xydata[0],xydata[1],data.data.realName)
+                    }
+                }
+            })
+        })
+
+        function showColumn(xdata,ydata,username) {
+            var myChart = echarts.init(document.getElementById('main'));
+            myChart.clear()
+            var option = {
+                title:{
+                    show:true,
+                    text:"员工："+username+"❤",
+                    left: '48%',
+                    textAlign: 'center'
+                },
+                xAxis: {
+                    type: 'category',
+                    data: xdata
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: [{
+                    data: ydata,
+                    type: 'bar',
+                    showBackground: true,
+                    backgroundStyle: {
+                        color: 'rgba(180, 180, 180, 0.2)'
+                    }
+                }]
+            };
+            myChart.setOption(option, true);
+        }
+
+    //    数据处理
+        function processingData(data) {
+            var xdata=new Array();
+            var ydata=new Array();
+            var arr=new Array();
+            for (var i=0;i<data.length;i++){
+                xdata.push(data[i].name)
+                ydata.push(data[i].value)
+            }
+            arr.push(xdata);
+            arr.push(ydata);
+            return arr;
+        }
+    </script>
+
+</body>
+
+</html>
